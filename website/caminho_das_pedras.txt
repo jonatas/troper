@@ -1,0 +1,244 @@
+h1. Lista de tarefas geral
+
+# Documentação
+## Introdução ao sistema
+### Descrição geral da ferramenta
+### Revisão geral das partes do passo a passo
+### Filtros
+### Colunas
+### Fonte de dados
+
+h1. Gerando relatório na web:
+
+h2. O velho terror dos programadores
+
+Como sempre, odiado pelos suportes, fazer relatório é algo realmente muito chato.
+
+h2. Sistema para construir relatórios na web. 
+
+Criar uma interface onde possa ser indicado uma consulta, e apartir desta consulta permitir a edição do leiaute para impressão da consulta. Neste leiaute deve ser possível:
+Em todas as templates, será possível não alterar nada, e simplesmente sujerir todo o leiaute.
+
+# Editar cabeçalho
+## Trocar título
+## Imprimir filtros e parametros externos
+
+# Editar a banda da consulta
+## Sobrescrever qualquer coluna, e mesmo alterar o html da banda
+## Adicionar colunas virtuais
+
+# Editar a banda do rodapé
+## Adicionar filtros de agregação como [sum, count]
+## Modificar os dados do rodapé
+
+
+h2. Quanto a interface do sistema
+
+No planejamento da interface do sistema, o sistema espera tratar diretamente com a experiência do usuário para a construção e manutenção de um relatório. Fazer uma determinada tarefa repetitivamente leva um aperfeiçoamento dos métodos de interagir com o sistema. 
+
+Para construir uma interface inteligente, é necessário a colaboração de no mínimo um usuário. A experiência na execução das tarefas esperadas pelo sistema precisam ser de domínio desta pessoa e o feedback constante ajuda na ergonomia do produto.
+
+Exemplo de um novo relatório:
+
+* Escolher a consulta que contém os dados do relatório
+** Neste momento deve ser inteligente para buscar as consultas pre-definidas/tabelas do bd
+
+* Mostrar as colunas 
+* Permitir editar as colunas existentes (label, sobrescrever)
+* Permitir adicionar novas colunas
+* Adicionar um cabeçalho
+* Adicionar um rodapé
+
+escolha a query inicial:
+
+|. Escolha uma consulta |
+| clientes |
+| clientes_validos |
+| enderecos | 
+
+* escolhida a consulta inicial de **clientes**, estarão disponíveis os campos do cliente e seus relacionamentos para inclusão:
+
+|. clientes|
+| [ ] id|
+| [x] nome|
+| [x] telefone|
+| [x] email|
+| [x] endereco_id [+]|
+
+  
+Com a query em mãos vou deduzir as colunas do relatorio:
+
+<pre>
+
+  +---------------------+ 
+  | query: [ cliente ]
+  +---------------------+
+  | [ ] id 
+  | [x] nome
+  | [x] telefone 
+  | [x] email
+  | [x] endereco_id [+]
+  +---------------------+
+
+ </pre>
+
+  deve observar os relacionamentos como padrão active_record, dando a opcão de habilitar os outros campos do relatorio:
+
+**query cliente**
+# [ ] id 
+# [x] nome
+# [x] telefone 
+# [x] email
+# [x] endereco_id [-]
+## [x] rua
+## [x] numero 
+## [x] complemento
+## [x] cidade 
+
+
+  deve dar a possibilidade de adicionar os relacionamentos indo para o próximo passo da organização das colunas.
+
+
+|_. Colunas com propriedades |
+| [x] colunas       |  label      |
+| [x] nome          | Nome        |
+| [x] email         | Email       |
+| [x] telefone      | Fone        |
+| [x] rua           | Rua         |
+| [x] numero        | Número      |
+| [x] complemento   | Complemento |
+| [x] cidade        | Cidade      |
+
+
+  melhorando o exemplo com a coluna de sobrescrever a escrita dos elementos default:
+
+
+|_. Colunas com mais propriedades |
+| [X] COLUNAS       |  LABEL      | SUBSTITUIR |
+| [x] nome          | Nome        | |
+| [x] email         | Email       | **mail_to cliente.email** |
+| [x] telefone      | Fone        | cliente.email.formata :telefone |
+| [x] endereco      | Endereço    | cliente.endereco.rua + ' nr '+ |
+|                   |             | cliente.endereco.numero + ', '+ |
+|                   |             | cliente.endereco.complemento   |
+
+h2. Filtros do relatório: 
+
+A filtragem de dados faz parte da construção do relatório e deve ser declarada após a seleção das colunas, dando opção de adicionar uma condição para um filtro, e uma interface para sujerir o mesmo filtro.
+Cada filtro poderá fazer parte da condição sql, e terá uma sujestão para a consulta quando for baseado em uma coluna. 
+
+Um filtro baseado em uma coluna pode deduzir:
+
+* o **nome do label** usando o nome e tipo do filtro
+** ex: Nascimento entre
+
+* o **tipo do componente** usado na tela apartir do tipo da coluna
+
+<pre syntax='ruby'>
+
+ calendario(nascimento_de) + ' até ' + calendario(nascimento_ate)
+
+</pre>
+
+* a **condição sql** ou **lambda** para execução enquanto estiver imprimindo
+
+<pre syntax='ruby'>
+ ## usando condicao sql 
+
+ "clientes.nascimento between :nascimento_de and :nascimento_ate"
+
+ ## usando uma validacao enquanto imprimindo
+
+ inicio, fim = filtro(nascimento_de).to_date, filtro(nascimento_ate).to_date
+ lambda { |cliente| inicio..fim.include?(cliente.data_aniversario) }
+
+</pre>
+
+
+|_. Adicionar um filtro |
+| Nome filtro                | Quando                          | Visualizar como    |
+| Aniversário entre | entre  | "clientes.nascimento betwee"... | calendario(nascimento_de) + ' até '.. |
+
+h2. Gerando templates
+
+Apartir deste resultado, vou gerar um resultado html: 
+
+h3. template cabeçalho
+  
+<pre syntax='html'>
+  <h1>Clientes</h1>
+  <table>
+     <tr>
+       <td>Nome</td>
+       <td>Email</td>
+       <td>Fone</td>
+       <td>Endereço</td>
+     </tr>
+     <!-- imprimir clientes -->
+  </table>
+</pre>
+
+h3. template item 
+<pre syntax='html'>
+  <tr>
+    <td>#{cliente.nome}</td>
+    <td>#{cliente.email}</td>
+    <td>#{cliente.fone}</td>
+    <td>#{cliente.endereco}</td>
+  </tr> 
+</pre>
+
+  [ template rodapé ] #TODO: ainda não chegamos aqui.
+
+
+h2. Dificuldades de se focar no escopo
+
+Quando penso em uma IDE, ou ferramenta utilitária para a execução do trabalho, lembro me que poupo meu próprio trabalho se souber faze-lo bem. Mas como conheço o poder da mente e um pouco sobre escopo de projeto, decidi pelas boas práticas da simplicidade e foco maior no valor do negócio.
+
+h2. Quanto a organização da arquitetura
+
+Primeiro é necessário ter dados iniciais para criação do relatório, a forma basica da ferramenta vai ser trabalhar com um array de hash com hash dentro de colunas:
+Como padrão irei reconhecer o relatorio apartir do prefixo coleção:
+
+<pre syntax="ruby">
+
+  { :clientes => 
+   [ 
+    {
+       :nome => "jonatas",
+       :email => "jonatasdp@gmail.com"
+    },{
+       :nome => "pedro",
+       :email => "pr_pedro@xxx.com"
+    }
+   ]
+  }
+</pre>
+  ou:
+
+<pre syntax='ruby'>
+
+  { :colecão_clientes => lambda { Cliente.all } }
+
+</pre>
+
+  implementando outros atributos do relatório:
+
+<pre syntax='ruby'>
+  {
+   :titulo => "Clientes com email",
+   :colunas => {
+      :nome => {
+         :titulo => "Nome do cliente"
+      },
+      :email => {
+         :titulo => "Enviar email",
+         :conteudo => lambda {|cliente| mail_to cliente.email }
+     }
+   }
+   :colecão_clientes => lambda { Cliente.all },
+   :rodape => lambda {|self| "Total de clientes: #{self[:clientes].length}" }
+  }
+
+</pre>
+

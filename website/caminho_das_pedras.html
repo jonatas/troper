@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <link rel="stylesheet" href="leiaute.css" type="text/css" media="screen" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Caminho das Pedras </title>
+</head>
+<body>
+<div id="main">
+
+    <h1>Caminho das Pedras</h1>
+    <ol>
+	<li>Documentação
+	<ol>
+		<li>Introdução ao sistema
+		<ol>
+			<li>Descrição geral da ferramenta</li>
+			<li>Revisão geral das partes do passo a passo</li>
+			<li>Filtros</li>
+			<li>Colunas</li>
+			<li>Fonte de dados</li>
+		</ol></li>
+	</ol></li>
+</ol>
+<h1>Gerando relatório na web:</h1>
+<h2>O velho terror dos programadores</h2>
+<p>Como sempre, odiado pelos suportes, fazer relatório é algo realmente muito chato.</p>
+<h2>Sistema para construir relatórios na web.</h2>
+<p>Criar uma interface onde possa ser indicado uma consulta, e apartir desta consulta permitir a edição do leiaute para impressão da consulta. Neste leiaute deve ser possível:<br />
+Em todas as templates, será possível não alterar nada, e simplesmente sujerir todo o leiaute.</p>
+<ol>
+	<li>Editar cabeçalho
+	<ol>
+		<li>Trocar título</li>
+		<li>Imprimir filtros e parametros externos</li>
+	</ol></li>
+</ol>
+<ol>
+	<li>Editar a banda da consulta
+	<ol>
+		<li>Sobrescrever qualquer coluna, e mesmo alterar o html da banda</li>
+		<li>Adicionar colunas virtuais</li>
+	</ol></li>
+</ol>
+<ol>
+	<li>Editar a banda do rodapé
+	<ol>
+		<li>Adicionar filtros de agregação como [sum, count]</li>
+		<li>Modificar os dados do rodapé</li>
+	</ol></li>
+</ol>
+<h2>Quanto a interface do sistema</h2>
+<p>No planejamento da interface do sistema, o sistema espera tratar diretamente com a experiência do usuário para a construção e manutenção de um relatório. Fazer uma determinada tarefa repetitivamente leva um aperfeiçoamento dos métodos de interagir com o sistema.</p>
+<p>Para construir uma interface inteligente, é necessário a colaboração de no mínimo um usuário. A experiência na execução das tarefas esperadas pelo sistema precisam ser de domínio desta pessoa e o feedback constante ajuda na ergonomia do produto.</p>
+<p>Exemplo de um novo relatório:</p>
+<ul>
+	<li>Escolher a consulta que contém os dados do relatório
+	<ul>
+		<li>Neste momento deve ser inteligente para buscar as consultas pre-definidas/tabelas do bd</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Mostrar as colunas</li>
+	<li>Permitir editar as colunas existentes (label, sobrescrever)</li>
+	<li>Permitir adicionar novas colunas</li>
+	<li>Adicionar um cabeçalho</li>
+	<li>Adicionar um rodapé</li>
+</ul>
+<p>escolha a query inicial:</p>
+<table>
+	<tr>
+		<td>Escolha uma consulta </td>
+	</tr>
+	<tr>
+		<td> clientes </td>
+	</tr>
+	<tr>
+		<td> clientes_validos </td>
+	</tr>
+	<tr>
+		<td> enderecos </td>
+</table>
+<ul>
+	<li>escolhida a consulta inicial de <b>clientes</b>, estarão disponíveis os campos do cliente e seus relacionamentos para inclusão:</li>
+</ul>
+<table>
+	<tr>
+		<td>clientes</td>
+	</tr>
+	<tr>
+		<td> [ ] id</td>
+	</tr>
+	<tr>
+		<td> [x] nome</td>
+	</tr>
+	<tr>
+		<td> [x] telefone</td>
+	</tr>
+	<tr>
+		<td> [x] email</td>
+	</tr>
+	<tr>
+		<td> [x] endereco_id [+]</td>
+	</tr>
+</table>
+<p>Com a query em mãos vou deduzir as colunas do relatorio:</p>
+<pre>
+
+  +---------------------+ 
+  | query: [ cliente ]
+  +---------------------+
+  | [ ] id 
+  | [x] nome
+  | [x] telefone 
+  | [x] email
+  | [x] endereco_id [+]
+  +---------------------+
+
+ </pre>
+deve observar os relacionamentos como padrão active_record, dando a opcão de habilitar os outros campos do relatorio:
+<p><b>query cliente</b></p>
+<ol>
+	<li>[ ] id</li>
+	<li>[x] nome</li>
+	<li>[x] telefone</li>
+	<li>[x] email</li>
+	<li>[x] endereco_id [-]
+	<ol>
+		<li>[x] rua</li>
+		<li>[x] numero</li>
+		<li>[x] complemento</li>
+		<li>[x] cidade</li>
+	</ol></li>
+</ol>
+deve dar a possibilidade de adicionar os relacionamentos indo para o próximo passo da organização das colunas.
+<table>
+	<tr>
+		<th>Colunas com propriedades </th>
+	</tr>
+	<tr>
+		<td> [x] colunas       </td>
+		<td>  label      </td>
+	</tr>
+	<tr>
+		<td> [x] nome          </td>
+		<td> Nome        </td>
+	</tr>
+	<tr>
+		<td> [x] email         </td>
+		<td> Email       </td>
+	</tr>
+	<tr>
+		<td> [x] telefone      </td>
+		<td> Fone        </td>
+	</tr>
+	<tr>
+		<td> [x] rua           </td>
+		<td> Rua         </td>
+	</tr>
+	<tr>
+		<td> [x] numero        </td>
+		<td> Número      </td>
+	</tr>
+	<tr>
+		<td> [x] complemento   </td>
+		<td> Complemento </td>
+	</tr>
+	<tr>
+		<td> [x] cidade        </td>
+		<td> Cidade      </td>
+	</tr>
+</table>
+melhorando o exemplo com a coluna de sobrescrever a escrita dos elementos default:
+<table>
+	<tr>
+		<th>Colunas com mais propriedades </th>
+	</tr>
+	<tr>
+		<td> [X] <span class="caps">COLUNAS</span>       </td>
+		<td>  <span class="caps">LABEL</span>      </td>
+		<td> <span class="caps">SUBSTITUIR</span> </td>
+	</tr>
+	<tr>
+		<td> [x] nome          </td>
+		<td> Nome        </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> [x] email         </td>
+		<td> Email       </td>
+		<td> <b>mail_to cliente.email</b> </td>
+	</tr>
+	<tr>
+		<td> [x] telefone      </td>
+		<td> Fone        </td>
+		<td> cliente.email.formata :telefone </td>
+	</tr>
+	<tr>
+		<td> [x] endereco      </td>
+		<td> Endereço    </td>
+		<td> cliente.endereco.rua + &#8217; nr &#8217;+ </td>
+	</tr>
+	<tr>
+		<td>                   </td>
+		<td>             </td>
+		<td> cliente.endereco.numero + &#8217;, &#8217;+ </td>
+	</tr>
+	<tr>
+		<td>                   </td>
+		<td>             </td>
+		<td> cliente.endereco.complemento   </td>
+	</tr>
+</table>
+<h2>Filtros do relatório:</h2>
+<p>A filtragem de dados faz parte da construção do relatório e deve ser declarada após a seleção das colunas, dando opção de adicionar uma condição para um filtro, e uma interface para sujerir o mesmo filtro.<br />
+Cada filtro poderá fazer parte da condição sql, e terá uma sujestão para a consulta quando for baseado em uma coluna.</p>
+<p>Um filtro baseado em uma coluna pode deduzir:</p>
+<ul>
+	<li>o <b>nome do label</b> usando o nome e tipo do filtro
+	<ul>
+		<li>ex: Nascimento entre</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>o <b>tipo do componente</b> usado na tela apartir do tipo da coluna</li>
+</ul>
+<p><pre class='syntax'>
+
+ <span class="ident">calendario</span><span class="punct">(</span><span class="ident">nascimento_de</span><span class="punct">)</span> <span class="punct">+</span> <span class="punct">'</span><span class="string"> até </span><span class="punct">'</span> <span class="punct">+</span> <span class="ident">calendario</span><span class="punct">(</span><span class="ident">nascimento_ate</span><span class="punct">)</span>
+
+</pre></p>
+<ul>
+	<li>a <b>condição sql</b> ou <b>lambda</b> para execução enquanto estiver imprimindo</li>
+</ul>
+<p><pre class='syntax'>
+ <span class="comment">## usando condicao sql </span>
+
+ <span class="punct">&quot;</span><span class="string">clientes.nascimento between :nascimento_de and :nascimento_ate</span><span class="punct">&quot;</span>
+
+ <span class="comment">## usando uma validacao enquanto imprimindo</span>
+
+ <span class="ident">inicio</span><span class="punct">,</span> <span class="ident">fim</span> <span class="punct">=</span> <span class="ident">filtro</span><span class="punct">(</span><span class="ident">nascimento_de</span><span class="punct">).</span><span class="ident">to_date</span><span class="punct">,</span> <span class="ident">filtro</span><span class="punct">(</span><span class="ident">nascimento_ate</span><span class="punct">).</span><span class="ident">to_date</span>
+ <span class="ident">lambda</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">cliente</span><span class="punct">|</span> <span class="ident">inicio</span><span class="punct">..</span><span class="ident">fim</span><span class="punct">.</span><span class="ident">include?</span><span class="punct">(</span><span class="ident">cliente</span><span class="punct">.</span><span class="ident">data_aniversario</span><span class="punct">)</span> <span class="punct">}</span>
+
+</pre></p>
+<table>
+	<tr>
+		<th>Adicionar um filtro </th>
+	</tr>
+	<tr>
+		<td> Nome filtro                </td>
+		<td> Quando                          </td>
+		<td> Visualizar como    </td>
+	</tr>
+	<tr>
+		<td> Aniversário entre </td>
+		<td> entre  </td>
+		<td> &#8220;clientes.nascimento betwee&#8221;&#8230; </td>
+		<td> calendario(nascimento_de) + &#8217; até &#8217;.. </td>
+	</tr>
+</table>
+<h2>Gerando templates</h2>
+<p>Apartir deste resultado, vou gerar um resultado html:</p>
+<h3>template cabeçalho<br />
+  <br />
+<pre class='syntax'>
+  &lt;h1&gt;Clientes&lt;/h1&gt;
+  &lt;table&gt;
+     &lt;tr&gt;
+       &lt;td&gt;Nome&lt;/td&gt;
+       &lt;td&gt;Email&lt;/td&gt;
+       &lt;td&gt;Fone&lt;/td&gt;
+       &lt;td&gt;Endereço&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;!-- imprimir clientes --&gt;
+  &lt;/table&gt;
+</pre></h3>
+<h3>template item <br />
+<pre class='syntax'>
+  &lt;tr&gt;
+    &lt;td&gt;#{cliente.nome}&lt;/td&gt;
+    &lt;td&gt;#{cliente.email}&lt;/td&gt;
+    &lt;td&gt;#{cliente.fone}&lt;/td&gt;
+    &lt;td&gt;#{cliente.endereco}&lt;/td&gt;
+  &lt;/tr&gt; 
+</pre></h3>
+[ template rodapé ] #<span class="caps">TODO</span>: ainda não chegamos aqui.
+<h2>Dificuldades de se focar no escopo</h2>
+<p>Quando penso em uma <span class="caps">IDE</span>, ou ferramenta utilitária para a execução do trabalho, lembro me que poupo meu próprio trabalho se souber faze-lo bem. Mas como conheço o poder da mente e um pouco sobre escopo de projeto, decidi pelas boas práticas da simplicidade e foco maior no valor do negócio.</p>
+<h2>Quanto a organização da arquitetura</h2>
+<p>Primeiro é necessário ter dados iniciais para criação do relatório, a forma basica da ferramenta vai ser trabalhar com um array de hash com hash dentro de colunas:<br />
+Como padrão irei reconhecer o relatorio apartir do prefixo coleção:</p>
+<p><pre class='syntax'>
+
+  <span class="punct">{</span> <span class="symbol">:clientes</span> <span class="punct">=&gt;</span> 
+   <span class="punct">[</span> 
+    <span class="punct">{</span>
+       <span class="symbol">:nome</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">jonatas</span><span class="punct">&quot;,</span>
+       <span class="symbol">:email</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">jonatasdp@gmail.com</span><span class="punct">&quot;</span>
+    <span class="punct">},{</span>
+       <span class="symbol">:nome</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">pedro</span><span class="punct">&quot;,</span>
+       <span class="symbol">:email</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">pr_pedro@xxx.com</span><span class="punct">&quot;</span>
+    <span class="punct">}</span>
+   <span class="punct">]</span>
+  <span class="punct">}</span>
+</pre><br />
+  ou:</p>
+<p><pre class='syntax'>
+
+  <span class="punct">{</span> <span class="symbol">:colecã</span><span class="ident">o_clientes</span> <span class="punct">=&gt;</span> <span class="ident">lambda</span> <span class="punct">{</span> <span class="constant">Cliente</span><span class="punct">.</span><span class="ident">all</span> <span class="punct">}</span> <span class="punct">}</span>
+
+</pre></p>
+implementando outros atributos do relatório:
+<p><pre class='syntax'>
+  <span class="punct">{</span>
+   <span class="symbol">:titulo</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">Clientes com email</span><span class="punct">&quot;,</span>
+   <span class="symbol">:colunas</span> <span class="punct">=&gt;</span> <span class="punct">{</span>
+      <span class="symbol">:nome</span> <span class="punct">=&gt;</span> <span class="punct">{</span>
+         <span class="symbol">:titulo</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">Nome do cliente</span><span class="punct">&quot;</span>
+      <span class="punct">},</span>
+      <span class="symbol">:email</span> <span class="punct">=&gt;</span> <span class="punct">{</span>
+         <span class="symbol">:titulo</span> <span class="punct">=&gt;</span> <span class="punct">&quot;</span><span class="string">Enviar email</span><span class="punct">&quot;,</span>
+         <span class="symbol">:conteudo</span> <span class="punct">=&gt;</span> <span class="ident">lambda</span> <span class="punct">{|</span><span class="ident">cliente</span><span class="punct">|</span> <span class="ident">mail_to</span> <span class="ident">cliente</span><span class="punct">.</span><span class="ident">email</span> <span class="punct">}</span>
+     <span class="punct">}</span>
+   <span class="punct">}</span>
+   <span class="symbol">:colecã</span><span class="ident">o_clientes</span> <span class="punct">=&gt;</span> <span class="ident">lambda</span> <span class="punct">{</span> <span class="constant">Cliente</span><span class="punct">.</span><span class="ident">all</span> <span class="punct">},</span>
+   <span class="symbol">:rodape</span> <span class="punct">=&gt;</span> <span class="ident">lambda</span> <span class="punct">{|</span><span class="constant">self</span><span class="punct">|</span> <span class="punct">&quot;</span><span class="string">Total de clientes: <span class="expr">#{self[:clientes].length}</span></span><span class="punct">&quot;</span> <span class="punct">}</span>
+  <span class="punct">}</span>
+
+</pre></p>
+    <p class="coda">
+      <a href="jonatasdp@gmail.com">Jônatas Davi Paganini</a>
+    </p>
+</div>
+
+</body>
+</html>
