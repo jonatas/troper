@@ -7,7 +7,8 @@ h1. Lista de tarefas geral
 ### Filtros
 ### Colunas
 ### Fonte de dados
-
+## Executar relatório
+#
 h1. Gerando relatório na web:
 
 h2. O velho terror dos programadores
@@ -31,25 +32,25 @@ Em todas as templates, será possível não alterar nada, e simplesmente sujerir
 ## Adicionar filtros de agregação como [sum, count]
 ## Modificar os dados do rodapé
 
-
 h2. Quanto a interface do sistema
 
 No planejamento da interface do sistema, o sistema espera tratar diretamente com a experiência do usuário para a construção e manutenção de um relatório. Fazer uma determinada tarefa repetitivamente leva um aperfeiçoamento dos métodos de interagir com o sistema. 
 
 Para construir uma interface inteligente, é necessário a colaboração de no mínimo um usuário. A experiência na execução das tarefas esperadas pelo sistema precisam ser de domínio desta pessoa e o feedback constante ajuda na ergonomia do produto.
 
-Exemplo de um novo relatório:
+h3. exemplo de um novo relatório:
 
 * Escolher a consulta que contém os dados do relatório
 ** Neste momento deve ser inteligente para buscar as consultas pre-definidas/tabelas do bd
-
 * Mostrar as colunas 
-* Permitir editar as colunas existentes (label, sobrescrever)
+** Exibe as colunas e a marcação para selecionar se vai aparecer no relatório ou não
+** Exibe atributos da coluna com suas inicializações default
+* Permitir editar as colunas existentes
 * Permitir adicionar novas colunas
 * Adicionar um cabeçalho
 * Adicionar um rodapé
 
-escolha a query inicial:
+h3. escolha a query inicial:
 
 |. Escolha uma consulta |
 | clientes |
@@ -66,7 +67,7 @@ escolha a query inicial:
 | [x] endereco_id [+]|
 
   
-Com a query em mãos vou deduzir as colunas do relatorio:
+Com a query em mãos vou deduzir as colunas do relatório:
 
 <pre>
 
@@ -80,9 +81,9 @@ Com a query em mãos vou deduzir as colunas do relatorio:
   | [x] endereco_id [+]
   +---------------------+
 
- </pre>
+</pre>
 
-  deve observar os relacionamentos como padrão active_record, dando a opcão de habilitar os outros campos do relatorio:
+deve observar os relacionamentos como padrão active_record, dando a opcão de habilitar os outros campos do relatorio:
 
 **query cliente**
 # [ ] id 
@@ -96,7 +97,7 @@ Com a query em mãos vou deduzir as colunas do relatorio:
 ## [x] cidade 
 
 
-  deve dar a possibilidade de adicionar os relacionamentos indo para o próximo passo da organização das colunas.
+deve dar a possibilidade de adicionar os relacionamentos indo para o próximo passo da organização das colunas.
 
 
 |_. Colunas com propriedades |
@@ -110,7 +111,7 @@ Com a query em mãos vou deduzir as colunas do relatorio:
 | [x] cidade        | Cidade      |
 
 
-  melhorando o exemplo com a coluna de sobrescrever a escrita dos elementos default:
+melhorando o exemplo com a coluna de sobrescrever a escrita dos elementos default:
 
 
 |_. Colunas com mais propriedades |
@@ -132,26 +133,38 @@ Um filtro baseado em uma coluna pode deduzir:
 * o **nome do label** usando o nome e tipo do filtro
 ** ex: Nascimento entre
 
-* o **tipo do componente** usado na tela apartir do tipo da coluna
+* o **tipo do componente** usado na tela apartir do tipo da coluna. exemplos:
+** calendário
+** campo texto
+** número
+** auto completar
+
+* o **operador do filtro** tipo sql
+** igual (=)
+** maior igual (>=)
+** menor igual (<=)
+** parecido (like '%%')
+** entre valores (between)
+** lista de valores (in(values...))
+
+* o **operador do filtro** tipo personalizado, executa em tempo real
+** lambda { | cliente | cliente.cidade =~ /beltrao/ }
 
 <pre syntax='ruby'>
-
- calendario(nascimento_de) + ' até ' + calendario(nascimento_ate)
-
+calendario(nascimento_de) + ' até ' + calendario(nascimento_ate)
 </pre>
 
 * a **condição sql** ou **lambda** para execução enquanto estiver imprimindo
 
 <pre syntax='ruby'>
- ## usando condicao sql 
+# usando condicao sql 
 
- "clientes.nascimento between :nascimento_de and :nascimento_ate"
+"clientes.nascimento between :nascimento_de and :nascimento_ate"
 
- ## usando uma validacao enquanto imprimindo
+# usando uma validacao enquanto imprimindo
 
- inicio, fim = filtro(nascimento_de).to_date, filtro(nascimento_ate).to_date
- lambda { |cliente| inicio..fim.include?(cliente.data_aniversario) }
-
+inicio, fim = filtro(nascimento_de).to_date, filtro(nascimento_ate).to_date
+lambda { |cliente| inicio..fim.include?(cliente.data_aniversario) }
 </pre>
 
 
@@ -159,86 +172,10 @@ Um filtro baseado em uma coluna pode deduzir:
 | Nome filtro                | Quando                          | Visualizar como    |
 | Aniversário entre | entre  | "clientes.nascimento betwee"... | calendario(nascimento_de) + ' até '.. |
 
-h2. Gerando templates
-
-Apartir deste resultado, vou gerar um resultado html: 
-
-h3. template cabeçalho
-  
-<pre syntax='html'>
-  <h1>Clientes</h1>
-  <table>
-     <tr>
-       <td>Nome</td>
-       <td>Email</td>
-       <td>Fone</td>
-       <td>Endereço</td>
-     </tr>
-     <!-- imprimir clientes -->
-  </table>
-</pre>
-
-h3. template item 
-<pre syntax='html'>
-  <tr>
-    <td>#{cliente.nome}</td>
-    <td>#{cliente.email}</td>
-    <td>#{cliente.fone}</td>
-    <td>#{cliente.endereco}</td>
-  </tr> 
-</pre>
-
-  [ template rodapé ] #TODO: ainda não chegamos aqui.
-
 
 h2. Dificuldades de se focar no escopo
 
 Quando penso em uma IDE, ou ferramenta utilitária para a execução do trabalho, lembro me que poupo meu próprio trabalho se souber faze-lo bem. Mas como conheço o poder da mente e um pouco sobre escopo de projeto, decidi pelas boas práticas da simplicidade e foco maior no valor do negócio.
 
-h2. Quanto a organização da arquitetura
 
-Primeiro é necessário ter dados iniciais para criação do relatório, a forma basica da ferramenta vai ser trabalhar com um array de hash com hash dentro de colunas:
-Como padrão irei reconhecer o relatorio apartir do prefixo coleção:
-
-<pre syntax="ruby">
-
-  { :clientes => 
-   [ 
-    {
-       :nome => "jonatas",
-       :email => "jonatasdp@gmail.com"
-    },{
-       :nome => "pedro",
-       :email => "pr_pedro@xxx.com"
-    }
-   ]
-  }
-</pre>
-  ou:
-
-<pre syntax='ruby'>
-
-  { :colecão_clientes => lambda { Cliente.all } }
-
-</pre>
-
-  implementando outros atributos do relatório:
-
-<pre syntax='ruby'>
-  {
-   :titulo => "Clientes com email",
-   :colunas => {
-      :nome => {
-         :titulo => "Nome do cliente"
-      },
-      :email => {
-         :titulo => "Enviar email",
-         :conteudo => lambda {|cliente| mail_to cliente.email }
-     }
-   }
-   :colecão_clientes => lambda { Cliente.all },
-   :rodape => lambda {|self| "Total de clientes: #{self[:clientes].length}" }
-  }
-
-</pre>
 

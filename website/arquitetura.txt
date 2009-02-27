@@ -1,0 +1,85 @@
+h1. Quanto a organização da arquitetura
+
+Primeiro é necessário ter uma fonte de dados iniciais para criação do relatório, a forma basica da ferramenta vai ser trabalhar com um array de hash com hash dentro de colunas, ou a execução de um código ruby:
+
+h2. Fonte de dados
+
+<pre syntax="ruby">
+
+  { :clientes => 
+   [ 
+    {
+       :nome => "jonatas",
+       :email => "jonatasdp@gmail.com"
+    },{
+       :nome => "pedro",
+       :email => "pr_pedro@xxx.com"
+    }
+   ]
+  }
+</pre>
+
+ou:
+
+<pre syntax='ruby'>
+
+  { :clientes => lambda { Cliente.all } }
+
+</pre>
+
+implementando outros atributos do relatório:
+
+<pre syntax='ruby'>
+  {
+   :titulo => "Clientes com email",
+   :colunas => {
+      :nome => {
+         :titulo => "Nome do cliente"
+      },
+      :email => {
+         :titulo => "Enviar email",
+         :conteudo => lambda {|cliente| mail_to cliente.email }
+     }
+   }
+   :clientes => lambda { Cliente.all },
+   :rodape => lambda {|self| "Total de clientes: #{self[:clientes].length}" }
+  }
+
+</pre>
+
+h2. Gerando templates
+
+Apartir deste resultado geramos a template html:
+
+h3. template cabeçalho
+  
+<pre syntax='html'>
+  <h1>Clientes</h1>
+  <table>
+     <tr>
+       <td>Nome</td>
+       <td>Email</td>
+       <td>Fone</td>
+       <td>Endereço</td>
+     </tr>
+     <!-- imprimir clientes -->
+  </table>
+</pre>
+
+h3. template item 
+<pre syntax='html'>
+  <tr>
+    <td>#{cliente.nome}</td>
+    <td>#{cliente.email}</td>
+    <td>#{cliente.fone}</td>
+    <td>#{cliente.endereco}</td>
+  </tr> 
+</pre>
+
+h3. template rodapé #TODO: ainda não chegamos aqui.
+
+<pre syntax='html'>
+  <tr>
+    <td colspan="6">Listando #{colecao_clientes.length} clientes</td>
+  </tr> 
+</pre>
