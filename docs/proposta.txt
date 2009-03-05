@@ -1,0 +1,83 @@
+
+h2. UNIVERSIDADE PARANAENSE SISTEMAS DE INFORMAÇÃO
+
+h1. 'TROPER' - Relatórios Web
+
+h2. Jônatas Davi paganini
+
+h2. Francisco Beltrão, 27 de fevereiro de 2009
+
+
+Estágio realizado na área de _programação_, supervisionado pelo professor Almir Andrade submetido à Universidade Paranaense como parte dos requisitos para a obtenção do grau de Bacharel em Sistemas de Informação.
+                                                    
+
+h2. Equipe Técnica
+
+** **Jônatas Davi Paganini** ( Estagiário )
+** **Alexsandra Medeiros** ( Cliente responsável )
+** **Almir Andrade** ( Coordernador de estágio )
+** Este projeto também será supervisionado por outros programadores da Leosoft.
+
+h2. Empresa
+
+Leosoft CIA de Informática - Leonir de Campos EPP.
+Avenida Júlio Assis Cavalheiro, 416 - Centro
+Cep: 85601-010 - Francisco Beltrão - PR
+
+h2. Declaração
+
+A empresa Leosoft CIA de Informática declara, para devidos fins, que concorda com o projeto de estágio apresentado pelo(a) estagiário(a) Jônatas Davi Paganini, aluno(a) do curso de Sistemas de Informação do Campus de Francisco Beltrão da Universidade Paranaense, e se propõe a oferecer as condições necessárias para o bom andamento do mesmo.
+
+
+Francisco Beltrão, 27 de fevereiro de 2009.
+
+Alexsandra Medeiros
+
+# TODO -  A declaração deve ser, de preferência, em papel timbrado da empresa
+
+h2. Introdução
+
+* Aplicativos na internet
+** Todos os dias vemos um novo aplicativo na internet
+** A Leosoft tem muitos desses
+
+* A partir de um feedback
+
+Projetos de software geralmente apresentam foco em algumas partes e vantagens para as mesmas. A Leosoft sempre teve um bom feedback em um de seus sistemas por possuir uma ferramenta para construir relatórios de maneira fácil e útil. Os usuários se sentem bem por ter liberdade para construir/modificar relatórios para suas necessidades específicas.
+
+h2. Objetivos (geral)
+
+Abraçar todas as idéias na construção de um software não dá certo, o objetivo do projeto é encontrar um escopo para a construção de relatórios simples e personalizados.
+
+
+h3. Construir relatórios  (objetivos específicos)
+
+Uma inteface estilo 'passo a passo' para construir um relatório.
+
+h3. Executar relatórios (objetivos específicos)
+
+Uma interface gerada automaticamente apartir dos filtros pré-definidos para o relatório, pegando os dados do mesmo, enviando para o servidor processar, executar os filtros e construir a interface com os dados no formato html.
+
+h2. Justificativa
+
+* Necessidade da ferramenta na web 
+
+A maioria dos projetos web da Leosoft são construídos usando o framework Ruby On Rails, e este não possui nenhuma ferramenta pronta para k sendo este de fácil manutenção e flexibilidade. A adição módulos plugáveis pode ser fácilmente introduzida nestes em qualquer sistema.
+
+A 
+* Personalização - Cada pessoa gosta de uma cor, ver o nome antes do telefone, não usa o telefone e apenas celular. Dificilmente um sistema irá agradar a todos os usuários.
+
+h2. Valores agregados ao sistema
+
+**Ser plugável**
+
+Irá funcionar para os sistemas existentes da Leosoft. Isto agregará valor a outros sistemas que já possuem valor para os clientes.
+
+** Ser flexível**
+
+Entender os modelos e regras do sistema. Possibilidade de acoplar o dicionário de dados ou a fonte de dados.
+
+h3. Leosoft
+
+A empresa terá uma diminuição significativa na demanda de construção e manutenção de relatórios. Poderá oferecer mais um módulo interessante para o cliente.
+
