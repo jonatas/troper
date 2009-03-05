@@ -1,4 +1,3 @@
-
 h2. UNIVERSIDADE PARANAENSE SISTEMAS DE INFORMAÇÃO
 
 h1. 'TROPER' - Relatórios Web
@@ -63,9 +62,8 @@ h2. Justificativa
 * Necessidade da ferramenta na web 
 
 A maioria dos projetos web da Leosoft são construídos usando o framework Ruby On Rails, e este não possui nenhuma ferramenta pronta para k sendo este de fácil manutenção e flexibilidade. A adição módulos plugáveis pode ser fácilmente introduzida nestes em qualquer sistema.
-
-A 
-* Personalização - Cada pessoa gosta de uma cor, ver o nome antes do telefone, não usa o telefone e apenas celular. Dificilmente um sistema irá agradar a todos os usuários.
+ 
+* Personalização - Cada pessoa gosta de uma cor, ver o nome antes do telefone, não usa o telefone e apenas celular. Dificilmente um sistema irá agradar a todos os usuários. Essa interface irá trazer ao usuário uma forma para fazer estas mudanças sem a necessidade de um pedido aos desenvolvedores do software.
 
 h2. Valores agregados ao sistema
 
