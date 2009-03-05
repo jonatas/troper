@@ -1,11 +1,12 @@
 **TROPER**
 
 árvore de diretórios:
-troper/
- script/            -- pasta dos scripts ruby para automatizar algumas tarefas gerais 
- tasks/             -- tarefas rake - use rake --tasks para ver a lista de tarefas
- docs/              -- arquivos da documentação 
- Rakefile           -- tarefas rake
- alteracoes.textile -- histórico de alterações no projeto
+
+* troper
+**script             -- pasta dos scripts ruby para automatizar algumas tarefas gerais 
+**tasks              -- tarefas rake - use rake --tasks para ver a lista de tarefas
+**docs               -- arquivos da documentação 
+**Rakefile           -- tarefas rake
+**alteracoes.textile -- histórico de alterações no projeto
 
 
