@@ -2,3 +2,7 @@
 ** renomeado a estrutura das pastas ficar mais conveniente com o projeto
 ** criado o arquivo para logar as atualizações
 ** alterado os arquivos de texto para o formato textile que ficam formatados em html também
+
+
+* 08/03/2009 - [ jonatas ]
+** organização da documentação para os professores se encontrarem no projeto

@@ -1,12 +1,27 @@
 **TROPER**
 
-árvore de diretórios:
+projeto para construção e execução de relatórios na web.
 
-* troper
-**script             -- pasta dos scripts ruby para automatizar algumas tarefas gerais 
-**tasks              -- tarefas rake - use rake --tasks para ver a lista de tarefas
-**docs               -- arquivos da documentação 
-**Rakefile           -- tarefas rake
-**alteracoes.textile -- histórico de alterações no projeto
+explicação sobre diretórios e arquivos:
 
+* docs - arquivos da documentação
+são escritos apenas os arquivos no formato txt usando a marcação "textile":http://hobix.com/textile/quick.html
 
+** arquitetura.txt - idéia inicial do comportamento do framework e como irá lidar com as estruturas internamente.
+** caminho_das_pedras.txt - organização das idéias de como vai funcionar o sistema passo a passo.
+
+* script
+pasta dos scripts ruby para automatizar tarefas triviais do desenvolvimento 
+
+* tasks
+tarefas rake - use rake --tasks para ver a lista de tarefas
+
+* Rakefile -- organiza as tarefas rake
+
+* alteracoes.textile 
+histórico de alterações no projeto
+
+para gerar a documentação digite:
+<code>
+rake docs
+</code>

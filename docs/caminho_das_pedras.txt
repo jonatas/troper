@@ -172,10 +172,3 @@ lambda { |cliente| inicio..fim.include?(cliente.data_aniversario) }
 | Nome filtro                | Quando                          | Visualizar como    |
 | Aniversário entre | entre  | "clientes.nascimento betwee"... | calendario(nascimento_de) + ' até '.. |
 
-
-h2. Dificuldades de se focar no escopo
-
-Quando penso em uma IDE, ou ferramenta utilitária para a execução do trabalho, lembro me que poupo meu próprio trabalho se souber faze-lo bem. Mas como conheço o poder da mente e um pouco sobre escopo de projeto, decidi pelas boas práticas da simplicidade e foco maior no valor do negócio.
-
-
-
