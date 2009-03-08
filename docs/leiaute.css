@@ -1,14 +1,16 @@
 body {
-  background-color: #E1D1F1;
-  font-family: "Georgia", sans-serif;
-  font-size: 16px;
-  line-height: 1.6em;
-  padding: 1.6em 0 0 0;
-  color: #333;
+ background-color:Cornsilk;
+ color:LightSlateBlue;
+ font-family:"Georgia",sans-serif;
+ font-size:16px;
+ line-height:1.6em;
+ padding:1.6em 0 0;
 }
+
 h1, h2, h3, h4, h5, h6 {
-  color: #444;
+  color: LightSlateBlue;
 }
+
 h1 { 
   font-family: sans-serif;
   font-weight: normal;
@@ -17,17 +19,18 @@ h1 {
   letter-spacing: -0.1ex;
 	margin: 5px;
 }
+
 li {
   padding: 0;
   margin: 0;
   list-style-type: square;
 }
+
 a {
-  color: #5E5AFF;
-	background-color: #DAC;
+  color: Chocolate;
   font-weight: normal;
-  text-decoration: underline;
-}
+  text-decoration: underline; }
+
 blockquote {
   font-size: 90%;
   font-style: italic;
@@ -42,11 +45,6 @@ blockquote {
   width: 45em;
   padding: 0;
   margin: 0 auto;
-}
-.coda {
-  text-align: right;
-  color: #77f;
-  font-size: smaller;
 }
 
 table {
@@ -95,41 +93,6 @@ pre, code {
 .regex { color: #ec6; }
 .number { color: #F99; }
 .expr { color: #227; }
-
-#version {
-  float: right;
-  text-align: right;
-  font-family: sans-serif;
-  font-weight: normal;
-  background-color: #B3ABFF;
-  color: #141331;
-  padding: 15px 20px 10px 20px;
-  margin: 0 auto;
-	margin-top: 15px;
-  border: 3px solid #141331;
-}
-
-#version .numbers {
-  display: block;
-  font-size: 4em;
-  line-height: 0.8em;
-  letter-spacing: -0.1ex;
-	margin-bottom: 15px;
-}
-
-#version p {
-  text-decoration: none;
-	color: #141331;
-	background-color: #B3ABFF;
-	margin: 0;
-	padding: 0;
-}
-
-#version a {
-  text-decoration: none;
-	color: #141331;
-	background-color: #B3ABFF;
-}
 
 .clickable {
 	cursor:	pointer; 

@@ -55,27 +55,38 @@ Uma inteface estilo 'passo a passo' para construir um relatório.
 
 h3. Executar relatórios (objetivos específicos)
 
-Uma interface gerada automaticamente apartir dos filtros pré-definidos para o relatório, pegando os dados do mesmo, enviando para o servidor processar, executar os filtros e construir a interface com os dados no formato html.
+Uma interface gerada automaticamente apartir dos filtros pré-definidos para o relatório, pegando os dados do mesmo, enviando para o servidor processar, executar os filtros e construir a interface para apresentação dos dados.
 
 h2. Justificativa
 
 * Necessidade da ferramenta na web 
 
-A maioria dos projetos web da Leosoft são construídos usando o framework Ruby On Rails, e este não possui nenhuma ferramenta pronta para k sendo este de fácil manutenção e flexibilidade. A adição módulos plugáveis pode ser fácilmente introduzida nestes em qualquer sistema.
- 
-* Personalização - Cada pessoa gosta de uma cor, ver o nome antes do telefone, não usa o telefone e apenas celular. Dificilmente um sistema irá agradar a todos os usuários. Essa interface irá trazer ao usuário uma forma para fazer estas mudanças sem a necessidade de um pedido aos desenvolvedores do software.
+A maioria dos projetos web da "Leosoft":http://www.leosoft.com.br utilizam o framework "Ruby On Rails":http://rubyonrails.org, e este não possui nenhuma ferramenta pronta para executar este tipo de trabalho. 
+
+* Ferramentas complicadas só são úteis para pessoas especializadas
+
+Como solução para a empresa, os programadores e suporte dos sistemas escritos em java e ruby, usam iReport, que é uma ferramenta java para criar os relatórios para os clientes.
+iReport é uma interface robusta escrita em java, que dá a possibilidade de ajustar todos os aspectos da construção e desenvolvimento de um arquivo _jasper report_.  Jasper é uma biblioteca para criação de documentos em diversos formatos (pdf, html, xsl, etc.) com leiaute personalizado a partir de um arquivo **jrxml** - jasper report xml.  
+
+* Personalização
+
+Cada pessoa gosta de uma cor, ver o nome antes do telefone, não usa o telefone e apenas celular. Dificilmente um sistema irá agradar a todos os usuários. Essa interface irá trazer ao usuário uma forma para fazer estas mudanças sem a necessidade de um pedido aos desenvolvedores do software.
+O uso de uma ferramenta complexa para a execução do trabalho diminui a possibilidade de o usuário fazer tarefas triviais desvalorizando o projeto por detalhes que até então eram sem importância.
 
 h2. Valores agregados ao sistema
 
-**Ser plugável**
+* Ser plugável
 
 Irá funcionar para os sistemas existentes da Leosoft. Isto agregará valor a outros sistemas que já possuem valor para os clientes.
 
-** Ser flexível**
+* Ser flexível
 
-Entender os modelos e regras do sistema. Possibilidade de acoplar o dicionário de dados ou a fonte de dados.
+Entender os modelos e regras do sistema são tarefas relativamente simples em projetos rails. Com o uso do framework existe a possibilidade de trabalhar com as entidades e seus relacionamentos através do mapeador objeto relacional "ActiveRecord":http://ar.rubyonrails.org/ que é um framework que conecta objetos de negócio a tabelas de banco de dados, facilita a criação e persistência de modelos de domínio.
+Desta forma, é possível extender o fonte de dados padrão usando as próprias definições dos modelos de dados.
 
 h3. Leosoft
 
-A empresa terá uma diminuição significativa na demanda de construção e manutenção de relatórios. Poderá oferecer mais um módulo interessante para o cliente.
+A empresa terá uma folga significativa na construção e manutenção de relatórios. 
+Poderá oferecer mais um módulo interessant para o cliente.
+Os valores de negócios para o cliente são proporcionais à maturidade do sistema alvo. Pois se este estiver aplicando a um sistema magro, terá uma fonte de dados magra e será necessário a elaboração de visões gerenciais e fontes de dados inteligentes conforme a demanda de fonte de dados do cliente final.
 
