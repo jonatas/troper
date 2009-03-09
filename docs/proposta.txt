@@ -90,3 +90,34 @@ A empresa terá uma folga significativa na construção e manutenção de relat�
 Poderá oferecer mais um módulo interessant para o cliente.
 Os valores de negócios para o cliente são proporcionais à maturidade do sistema alvo. Pois se este estiver aplicando a um sistema magro, terá uma fonte de dados magra e será necessário a elaboração de visões gerenciais e fontes de dados inteligentes conforme a demanda de fonte de dados do cliente final.
 
+
+h2. Ferramentas utilizadas na construção do sistema
+
+Basicamente uma aplicação web consiste em dois lados do aplicativo: cliente e servidor.
+
+* Interface - cliente
+** jQuery 
+uma ótima biblioteca para simplificar o manuseio de documentos HTML
+** ExtJx
+uma biblioteca para construir interfaces ricas na web usando javascript
+
+* Background - servidor
+** testes
+*** cucumber
+é uma ferramenta que permite os desenvolvedores ou clientes descrever como o software deve se comportar em texto puro. O texto é escrito usando uma linguagem de domínio específico de negócio. Também serve como documentação e testes automatizados
+**** rspec
+permite o desenvolvimento orientado a comportamento usado juntamente com o cucumber para o desenvolvimento e inspeção de comportamentos de um sistema
+*** integração contínua
+plugin para integração contínua e desenvolvimento orientado a testes, permitindo a execução automática de tarefas triviais
+** banco de dados
+*** Postgresql 8.3
+** documentação
+*** rDoc
+documenta os códigos-fonte do projeto
+*** RedCloth
+para a geração da documentação de formato texto para html
+*** Ruby Tenji
+biblioteca para a geração de templates
+
+
+

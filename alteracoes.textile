@@ -8,3 +8,4 @@
 ** organização da documentação para os professores se encontrarem no projeto
 ** alterado o leaiute cs
 ** novidades na documentação a respeito das vantagens de uso do projeto
+** adicionado ferramentas e bibliotecas necessárias para o desenvolvimento
