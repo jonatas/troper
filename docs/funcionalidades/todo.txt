@@ -1,0 +1,26 @@
+funcionalidades para construir:
+* construção do relatório
+Funcionalidade: Construir um novo relatório apartir de uma fonte de dados, podendo escolher as colunas, alterar os valores, leiaute, adicionar totalizadores e filtros e finalmente executar o relatório.
+Cenário: Criar um novo relatório apartir de uma fonte de dados e seguir os passos normais para a conclusão da tarefa.
+  Dado que escolhi a fonte de dados clientes.
+  Então deve aparecer as colunas do clientes. 
+Para construir um relatório novo relatório, primeiramente aparecerá a interface para escolher a fonte de dados.
+
+** interface passo a passo
+** fonte de dados
+** colecao de dados
+** colunas
+** filtros
+** totalizadores
+
+* execução
+** sequencia da montagem dos dados
+*** filtros
+*** montagem da consulta
+*** obtenção dos dados
+*** imprimindo em tempo real
+**** alterar as colunas - formatadores
+**** criar todalizadores
+
+
+

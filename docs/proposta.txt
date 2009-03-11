@@ -98,7 +98,7 @@ Basicamente uma aplicação web consiste em dois lados do aplicativo: cliente e 
 * Interface - cliente
 ** jQuery 
 uma ótima biblioteca para simplificar o manuseio de documentos HTML
-** ExtJx
+** ExtJs
 uma biblioteca para construir interfaces ricas na web usando javascript
 
 * Background - servidor
@@ -119,5 +119,31 @@ para a geração da documentação de formato texto para html
 *** Ruby Tenji
 biblioteca para a geração de templates
 
+h2. Recursos humanos e habilidades
 
+* Programador & Analista
+** Linguagens de programação
+*** Ruby e as seguintes bibliotecas:
+**** RubyTenji
+**** RubyGems
+**** rSpec
+**** Rails
+***** ActiveRecord
+***** ActionController
+**** RedCloth e Textile
+**** Rake
+****
+*** Javascript
+**** jQuery
+**** ExtJs
+**** FireBug
+
+* Cliente
+** entender o objetivo do sistema
+** testar a interação do sistema e validar as funcionalidades de acordo com o requisitado
+
+* Gerente do projeto
+** controle do andamento
+** gerência de remanejamento dos recursos humanos
+** habilidades para negociação e esclarecimento ao cliente
 
