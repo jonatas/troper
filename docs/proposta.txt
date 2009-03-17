@@ -116,7 +116,7 @@ plugin para integração contínua e desenvolvimento orientado a testes, permiti
 documenta os códigos-fonte do projeto
 *** RedCloth
 para a geração da documentação de formato texto para html
-*** Ruby Tenji
+*** liquid
 biblioteca para a geração de templates
 
 h2. Recursos humanos e habilidades
@@ -124,7 +124,7 @@ h2. Recursos humanos e habilidades
 * Programador & Analista
 ** Linguagens de programação
 *** Ruby e as seguintes bibliotecas:
-**** RubyTenji
+**** liquid 
 **** RubyGems
 **** rSpec
 **** Rails
@@ -132,8 +132,7 @@ h2. Recursos humanos e habilidades
 ***** ActionController
 **** RedCloth e Textile
 **** Rake
-****
-*** Javascript
+*** Javascript e as seguintes bibliotecas:
 **** jQuery
 **** ExtJs
 **** FireBug
