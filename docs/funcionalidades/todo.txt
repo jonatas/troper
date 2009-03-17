@@ -1,17 +1,30 @@
 funcionalidades para construir:
 * construção do relatório
-Funcionalidade: Construir um novo relatório apartir de uma fonte de dados, podendo escolher as colunas, alterar os valores, leiaute, adicionar totalizadores e filtros e finalmente executar o relatório.
-Cenário: Criar um novo relatório apartir de uma fonte de dados e seguir os passos normais para a conclusão da tarefa.
-  Dado que escolhi a fonte de dados clientes.
-  Então deve aparecer as colunas do clientes. 
-Para construir um relatório novo relatório, primeiramente aparecerá a interface para escolher a fonte de dados.
+Funcionalidade: Construir um novo relatório apartir de uma fonte de dados, podendo escolher as colunas, alterar os valores, leiaute, adicionar totalizadores e filtros.
+  Cenário: Criar um novo relatório apartir de uma fonte de dados e seguir os passos normais para a conclusão da tarefa.
+    Dado que escolhi a fonte de dados clientes.
+    Então deve conter as colunas nome, telefone, email 
+      O label da coluna nome deverá ser "Nome"
 
-** interface passo a passo
-** fonte de dados
+    E ser capaz de ter uma amostra de dados do relatório
+      E deve ser uma tabela
+      E esta tabela terá um cabeçalho
+
+    E ser capaz de pré-visualizar o relatório
+      Então deve ter uma template para gerar o relatório
+      Quando pegar a template da table 
+      Então deve ter a estrutura de uma table html
+        E deve ter uma tag título 
+        E deve ter uma tag com os labels das colunas
+        E deve ter uma template de repetição dos itens
+  
 ** colecao de dados
 ** colunas
 ** filtros
 ** totalizadores
+** template
+**
+
 
 * execução
 ** sequencia da montagem dos dados

@@ -9,3 +9,22 @@
 ** alterado o leaiute cs
 ** novidades na documentação a respeito das vantagens de uso do projeto
 ** adicionado ferramentas e bibliotecas necessárias para o desenvolvimento
+
+
+* 16/03/2009 - [ jonatas ]
+** criado mais algumas descrições das funcionalidades
+** estudo a respeito das ferramentas
+*** Cucumber::Ast::Table - cogitado a possibilidade de extender esta lib para usar as tabelas e grids e métodos para instanciar o datagrid que será necessário no software
+*** Cucumber - contextos aninhados: uma hipótese para escrever as features dentro de um arquivo só inicialmente e aninhar os contextos para funcionalidades:
+Dado um novo relatorio
+  Dado com o título 'relatorio teste' e
+  E com a fonte de dados .. 
+  Dado que a fonte e valida
+    Então deve saber a respeito do relatório
+    Então deve saber imprimir 
+
+  Dado que não tem dados
+    Então deve saber imprimir
+    Então deve imprimir 'sem dados'
+
+*** Comparação entre o uso do Report::Data::Table e Cucumber::Ast::Table
