@@ -1,8 +1,9 @@
 Feature: Manage reports using simple steps to build. 
   Scenario: Create a simple report using a table as datasource.
-    Given that I'm able to see a people table
+    Given that I'm able to see a people's relation
+    Then the name of this record should be equal person
 
-    When I'm looking form columns for this report
+    When I'm looking to person columns
       Then the default should be able to see all columns from table
       And should be equal: name, email, phone
 
