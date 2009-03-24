@@ -30,5 +30,8 @@ Dado um novo relatorio
 *** Comparação entre o uso do Report::Data::Table e Cucumber::Ast::Table
 
 * 17/03/2009 - [ jonatas ]
-*** Alteração da biblioteca de templates do projeto, pois analisando a biblioteca rubytenji e liquid, optar por liquid torna o projeto mais simples e mais extensível se tratando da interação com o usuário e a forma de formatar os campos. Com rubytenji iria ter que escrever os formatadores e a forma de extensão seria escrita por mim. Tornando assim liquid um caminho mais curto para a geração das tempates.
+** Alteração da biblioteca de templates do projeto, pois analisando a biblioteca rubytenji e liquid, optar por liquid torna o projeto mais simples e mais extensível se tratando da interação com o usuário e a forma de formatar os campos. Com rubytenji iria ter que escrever os formatadores e a forma de extensão seria escrita por mim. Tornando assim liquid um caminho mais curto para a geração das tempates.
+
+** Adição do cronograma e divisão das fases do sistema
+
 

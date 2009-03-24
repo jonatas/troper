@@ -146,3 +146,50 @@ h2. Recursos humanos e habilidades
 ** gerência de remanejamento dos recursos humanos
 ** habilidades para negociação e esclarecimento ao cliente
 
+h2. Cronograma
+
+As datas do cronograma ainda não estão definidas, mas o projeto basicamente estará disponível em três releases:
+
+h3. Primeira fase - Criação do ambiente e o núcleo da funcionalidade.
+
+Nesta fase será desenvolvida as classes responsáveis pela estrutura principal do relatório. Será desenvolvida a biblioteca usada para responder pelas necessidades do documento:
+
+# O que **vai ter** 
+
+## Escolher e manipular uma fonte de dados
+
+## Configure as colunas adicionando as que deseja adicionar para o relatório
+
+## Configure a template
+### manipular as colunas permitindo formatar e sobrescrever
+### manipular o título e cabeçalho
+
+## Quanto ao leiaute e exibição do relatório
+### carregar os dados do relatório
+### carregar a saida html a partir de uma template 
+### será possível ver o documento apartir de um arquivo html puro
+
+# O que **NÃO VAI TER** 
+## totalizadores ou resumos
+## interface para criar o relatório
+## filtros
+## interface para executar o relatório
+
+h3. Segunda fase - a interface com o usuário
+
+Nesta fase, será criada uma forma de o usuário interagir com o sistema e criar os seus próprios relatórios, permitindo personalizar os elementos que 
+   
+# Interface para criar e rodar o documento
+## Permitir que o usuário consiga montar o relatório
+### Escolha a fonte de dados
+### Configure as colunas
+### Configure a template
+### Execute o relatório
+
+h3. Terceira fase
+
+# Melhorias - amadurecimento da idéia e ferramenta
+## o background e interface permitir agrupamento e sumarização
+## a interface permitir adicionar filtros
+
+
