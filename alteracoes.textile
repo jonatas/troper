@@ -35,3 +35,9 @@ Dado um novo relatorio
 ** Adição do cronograma e divisão das fases do sistema
 
 
+* 23/03/2009 - [ jonatas ]
+** Alteração das funcionalidades para usar colunas.
+** Adição das funcionalidades em inglês, criando a primeira. 
+
+
+
