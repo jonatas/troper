@@ -1,0 +1,1598 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  * html body {
+    height: 1100px;
+  }
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  
+
+  
+    .writely-callout-data {
+      display: none;
+      *display: inline-block;
+      *width: 0;
+      *height: 0;
+      *overflow: hidden;
+    }
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    
+    .editor .writely-comment-yellow {
+      background-color: #FF9;
+      background-position: -240px 0;
+    }
+    .editor .writely-comment-yellow-hover {
+      background-color: #FF0;
+      background-position: -224px 0;
+    }
+    .editor .writely-comment-blue {
+      background-color: #C0D3FF;
+      background-position: -16px 0;
+    }
+    .editor .writely-comment-blue-hover {
+      background-color: #6292FE;
+      background-position: 0 0;
+    }
+    .editor .writely-comment-orange {
+      background-color: #FFDEAD;
+      background-position: -80px 0;
+    }
+    .editor .writely-comment-orange-hover {
+      background-color: #F90;
+      background-position: -64px 0;
+    }
+    .editor .writely-comment-green {
+      background-color: #99FBB3;
+      background-position: -48px 0;
+    }
+    .editor .writely-comment-green-hover {
+      background-color: #00F442;
+      background-position: -32px 0;
+    }
+    .editor .writely-comment-cyan {
+      background-color: #CFF;
+      background-position: -208px 0;
+    }
+    .editor .writely-comment-cyan-hover {
+      background-color: #0FF;
+      background-position: -192px 0;
+    }
+    .editor .writely-comment-purple {
+      background-color: #EBCCFF;
+      background-position: -144px 0;
+    }
+    .editor .writely-comment-purple-hover {
+      background-color: #90F;
+      background-position: -128px 0;
+    }
+    .editor .writely-comment-magenta {
+      background-color: #FCF;
+      background-position: -112px 0;
+    }
+    .editor .writely-comment-magenta-hover {
+      background-color: #F0F;
+      background-position: -96px 0;
+    }
+    .editor .writely-comment-red {
+      background-color: #FFCACA;
+      background-position: -176px 0;
+    }
+    .editor .writely-comment-red-hover {
+      background-color: #FF7A7A;
+      background-position: -160px 0;
+    }
+
+    .editor .writely-comment-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      padding-right: 11px;
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      -moz-user-select: none;
+    }
+
+    .editor .writely-comment-hidden {
+      padding: 0;
+      background: none;
+    }
+    .editor .writely-comment-marker-hidden {
+      background: none;
+      padding: 0;
+      width: 0;
+    }
+    .editor .writely-comment-none {
+      opacity: .2;
+      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+      -moz-opacity: .2;
+    }
+    .editor .writely-comment-none-hover {
+      opacity: .2;
+      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+      -moz-opacity: .2;
+    }
+  
+
+
+  
+  .br_fix br:not(:-moz-last-node):not(:-moz-first-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+  
+  .br_fix br+br {
+    position: static !important
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Times New Roman;
+      font-size: 12.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Times New Roman;
+  
+  font-size: 12.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+
+  
+  <title>projeto</title>
+
+</head>
+
+<body
+    
+    
+    revision="dgvf3jj3_23fwg8pdfz:97">
+
+    
+    
+    
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>UNIVERSIDADE PARANAENSE</font></font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>CAMPUS FRANCISCO BELTRÃO</font></font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>CURSO DE SISTEMAS DE INFORMAÇÃO</font></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>PROJETO DE ESTÁGIO</font></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>TROPER</font></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>Sistema de geração e execução de relatórios na web</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>Jônatas Davi Paganini</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>Francisco Beltrão, março de 2009</b></font></font>
+</p>
+<p align=center class=western>
+</p>
+<hr class=pb>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>UNIVERSIDADE PARANAENSE</font></font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><font size=5>SISTEMAS DE INFORMAÇÃO</font></font></font>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>TROPER</b></font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>Jônatas Davi Paganini</b></font></font>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p class=western style="MARGIN-LEFT:0.28in; TEXT-ALIGN:left">
+  <br>
+</p>
+<div>
+</div>
+<p class=western style="MARGIN-LEFT:2.88in; TEXT-ALIGN:left">
+  <font face="Arial, sans-serif"><font size=2>Estágio realizado na área de programação, supervisionado pelo professor Almir Andrade submetido à Universidade Paranaense como parte dos requisitos para a obtenção do grau de Bacharel em Sistemas de Informação.</font></font>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=justify class=western style=MARGIN-LEFT:0.28in>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>Francisco Beltrão, março de 2009</b></font></font>
+</p>
+<p align=center class=western>
+</p>
+<hr class=pb>
+<p class=western style=TEXT-ALIGN:left>
+  <br>
+</p>
+<div style=TEXT-ALIGN:left>
+</div>
+<p class=western style=TEXT-ALIGN:left>
+  <font face="Arial, sans-serif"><font size=4><b>EQUIPE TÉCNICA</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif"><font size=3>• Jônatas Davi Paganini ( Estagiário )</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif"><font size=3> • Alexsandra Medeiros ( Cliente responsável )</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif"><font size=3> • Almir Andrade ( Coordernador de estágio )</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif"><font size=3> • Este projeto também será supervisionado por outros programadores da Leosoft.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>DADOS DE IDENTIFICAÇÃO DA EMPRESA</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Leosoft CIA de Informática</b></font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3>Leonir de Campos EPP.</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Endereço</b></font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3>Avenida Júlio Assis Cavalheiro, 416 – Centro</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3>Cep: 85601-010 – Francisco Beltrão – PR</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Setor de desenvolvimento do estágio</b></font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=2>Desenvolvimento</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>Duração do estágio</b></font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=2>8 meses</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Nome e cargo do Supervisor na Empresa</b></font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=2>Gerente administrador</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Carimbo e visto da empresa</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+</p>
+<hr class=pb>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=4><b>DECLARAÇÃO</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=justify class=western>
+  <font face="Arial, sans-serif" size=3>A empresa Leosoft CIA de Informática declara, para devidos fins, que concorda com o projeto de estágio apresentado pelo estagiário Jônatas Davi Paganini, aluno do curso de Sistemas de Informação do Campus de Francisco Beltrão da Universidade Paranaense, e se propõe a oferecer as condições necessárias para o bom andamento do mesmo.</font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=right class=western>
+  <font face="Arial, sans-serif"><font size=2>Francisco Beltrão, 27 de fevereiro de 2009.</font></font>
+</p>
+<p align=right class=western>
+  <br>
+</p>
+<p align=right class=western>
+  <br>
+</p>
+<p align=right class=western>
+  <br>
+</p>
+<p align=right class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=2>Alexsandra Medeiros</font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=2><b>Gerente</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+</p>
+<hr class=pb>
+<p align=right class=western>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>1 INTRODUÇÃO</b></font></font>
+</p>
+<p align=justify class=western>
+  <br>
+</p>
+<p align=justify class=western>
+  <font face="Arial, sans-serif" size=3>O projeto de desenvolvimento consistirá num Sistema elaborado para gerar e executar relatórios na Web, agregado a outro Sistema já existente.</font>
+</p>
+<p align=justify class=western>
+  <font size=3><font face="Arial, sans-serif">Sabe-se que projetos de <i>software</i>, em geral, apresentam foco em partes específicas e suas vantagens. A Leosoft conta com um bom <i>feedback</i> em um de seus sistemas, por trabalhar uma ferramenta para construir relatórios de maneira fácil e útil, o CoopRel. Os usuários agradam-se com a liberdade para construir / modificar relatórios para necessidades específicas. Tal <i>software, </i>em operação, é restrito para <i>Desktop</i>.</font></font>
+</p>
+<p align=justify class=western>
+  <font size=3><font face="Arial, sans-serif">O projeto proposto é uma alternativa ao CoopRel, ampliando as possibilidades de facção de relatório, através de aplicativos <i>Web</i></font></font>
+</p>
+<p align=justify class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif" size=4><b>1.1 Objetivos</b></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif" size=4><b>1.1.1 Gerais</b></font>
+</p>
+<p align=justify class=western>
+  <font size=3><font face="Arial, sans-serif">O objetivo do projeto é encontrar um escopo para a construção de relatórios simples e personalizados a partir de aplicativos <i>web.</i></font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>1.1.2 Específicos </b></font></font>
+</p>
+<p class=western>
+  <font size=3><font face="Arial, sans-serif"><b>a) Construir relatórios </b> automaticamente através de uma inteface estilo ‘passo a passo’. </font></font>
+</p>
+<p class=western>
+  <font size=3><font face="Arial, sans-serif"><b>b) Executar relatórios</b>, enviando para o servidor processar, executar os filtros e apresentar os dados em HTML.</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><b>1.2 Justificativa</b></font></font>
+</p>
+<p class=western>
+  <font size=3><font face="Arial, sans-serif">A maioria dos projetos<i> Web</i> da Leosoft utilizam o <i>framework <b>Ruby On Rails</b></i>, que ainda não possui nenhuma ferramenta pronta para executar este tipo de trabalho.</font></font>
+</p>
+<p class=western>
+  <font size=3><font face="Arial, sans-serif">Como solução para a empresa, os programadores e suporte dos sistemas escritos em linguagem Java e Ruby, usam <i>iReport</i>, que é uma ferramenta em <i>Java</i> para criar os relatórios para os clientes. O <i>iReport </i>é uma interface robusta escrita em Java, que dá a possibilidade de ajustar todos os aspectos da construção e desenvolvimento de um arquivo <i>jasper report.</i> Trata-se de uma biblioteca para a criação de documentos em diversos formatos (pdf, html, xsl, etc.) com leiaute personalizado a partir de um arquivo jrxml – <i>jasper report</i> xml. O uso do <i>iReport</i> para a construção de relatórios dificulta a intervenção do usuário, gerando maior demanda para empresa desenvolvedora.</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3>Quanto à interface do software proposto, as mudanças no relatório, desde o seu formato gráfico até os dados, serão feitas independente dos desenvolvedores, tornando o usuário mais autônomo. O sistema de relatórios funcionará em sistemas já existentes na Leosoft, agregando a eles maior valor.</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3>Dessa forma, a empresa terá uma folga significativa na construção e manutenção de relatórios, oferecendo mais um módulo interessante para o cliente.</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>1.2 Descrição do objeto</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font size=3><font face="Arial, sans-serif">Entender os modelos e regras do sistema são tarefas relativamente simples em projetos <i>Rails</i>. Com o uso do <i>framework,</i> existe a possibilidade de trabalhar com as entidades e seus relacionamentos, através do 'mapeador objeto relacional' <i>ActiveRecord.</i> Este <i>framework</i> conecta objetos de negócio a tabelas de banco de dados, facilitando a criação e persistência de modelos de domínio. Dessa forma, é possível extender a fonte de dados padrão, usando as próprias definições dos modelos de dados.</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3>O número de fonte de dados depende da maturidade do sistema alvo. Em alguns casos será necessária a elaboração de visões gerenciais e fontes de dados inteligentes conforme a demanda de fonte de dados do cliente final.</font></font>
+</p>
+<p class=western>
+  <br>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>2 FUNDAMENTAÇÃO TEÓRICA</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>Para a fundamentação teórica deste projeto, elaboro algumas perguntas relativas ao desenvolvimento do sistema proposto. O método de desenvolvimento mais adequado é a Extreme Programming: </font></font>
+</p>
+<blockquote>
+  <p class=western style=MARGIN-LEFT:1.6in>
+    <font face="Arial, sans-serif"><font size=4>Extreme Programming (XP) é uma metodologia que se aproxima da realidade do ambiente de desenvolvimento de softwares. Com 8 anos de existência, vem melhorando muitas empresas de diversos tamanhos pelo mundo (...) efatiza também o trabalho em time.[1]</font></font>
+  </p>
+  <br>
+</blockquote>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>É uma metodologia adequada pelas suas boas práticas como: testes automatizados e princípios do manifesto ágil como mais interação entre os envolvidos que processos e ferramentas.</font></font>
+</p>
+<p class=western>
+  <font size=4><font face="Arial, sans-serif">Testes automatizados são softwares criados para testar o próprio software antes da sua codificação. A forma como estes testes são escritos é <i>Behaviour Development Driven:</i></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<blockquote>
+  <p class=western style=MARGIN-LEFT:1.81in>
+    <font face="Arial, sans-serif"><font size=4>Desenvolvimento orientado a comportamento (BDD) traz uma interação completa do desenvolvimento orientado a testes e desenvolvimento orientado a domínio, fazendo relacionamentos entre essas forças tornando o desenvolvimento de software mais evidente.[2]</font></font>
+  </p>
+</blockquote>
+<p class=western style=MARGIN-LEFT:1.81in>
+  <br>
+</p>
+<p class=western>
+  <font size=4><font face="Arial, sans-serif"><b>2.1 </b><b>Por que usar estórias do usuário ao invés de casos de uso?</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=3><font size=4>Trata-se de uma questão comum. Muitos seguidores do método XP consideram 'estórias' como uma alternativa mais simples aos casos de uso, ambos ferramentas organizadoras de requisitos. São, contudo, diferentes nos seus propósitos de organização. </font><b>Casos de uso</b><font size=4> organizam requisitos na forma </font><i>narrativa</i><font size=4>, abrangendo os modos de relacionamento dos usuários com o sistema; mantém o foco nos alvos e sua interação com o sistemas. As estórias XP, por sua vez, fragmenta os requisitos em pequenos pedaços, permitindo assim criar uma estimativa de tempo para o desenvolvimento deste.</font></font></font>
+</p>
+<p class=western>
+  <br>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>3 ASPECTOS METODOLÓGICOS</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif" size=3>Basicamente uma aplicação web consiste em cliente e servidor.</font>
+</p>
+<p class=western>
+  <br>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif" size=3><b>3.1 Ferramentas para construção da Interface – cliente</b></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif" size=3> ▪ Bibliotecas Javascript</font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font face="Arial, sans-serif" size=3> ▪ jQuery é uma biblioteca para simplificar o manuseio de documentos HTML.</font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font face="Arial, sans-serif" size=3> ▪ ExtJs é uma biblioteca para construir interfaces ricas na web usando javascript</font>
+</p>
+<p class=western>
+  <br>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif" size=3><b>3.2 Ferramentas para construção do background – servidor</b></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif" size=3> ▪ testes automatizados</font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> <b>Cucumber</b> é uma ferramenta que permite os desenvolvedores ou clientes descrever como o software deve se comportar em texto puro. O texto é escrito usando uma linguagem de domínio específico de negócio. Também serve como documentação e testes automatizados.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> <b><i>rSpec</i></b> permite o desenvolvimento orientado a comportamento usado juntamente com o cucumber para o desenvolvimento e inspeção de comportamentos de um sistema.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif" size=3> ▪ integração contínua</font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> <b>integrate </b>é um plugin para integração contínua e desenvolvimento orientado a testes, permitindo a execução automática de tarefas triviais para testes automatizados, versionamento de arquivos e cobertura de testes.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif" size=3> ▪ o banco de dados</font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> Postgresql 8.3 é um banco de dados usado pelos sistemas da Leosoft.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font face="Arial, sans-serif" size=3> • documentação</font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> rDoc documenta os códigos-fonte do projeto</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> RedCloth é uma biblioteca para a geração da documentação de formato texto para html</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> liquid é uma biblioteca para a geração de templates que permite executar métodos prédefinidos e </font></font>
+</p>
+<p class=western>
+  <br>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif" size=3><b>3.1 ETAPAS DE DESENVOLVIMENTO</b></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> Levantamento de Requisitos</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> Os requisitos serão fragmentados em texto puro, divididos em funcionalidades que serão integradas com o <i>framework</i> <b><i>Cucumber</i></b>. Com base nas funcionalidades descritas, serão codificados os testes do comportamento do sistema e as classes que suprirão a funcionalidade.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font size=2><font face="Lucida Grande">⁃</font> </font><font face="Arial, sans-serif"><font size=3>Análise de Requisitos</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> Com base nas funcionalidades descritas, será feito um análise que proporciona um roteiro básico para a codificação dos testes.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font size=3><font face="Lucida Grande">⁃</font><font face="Arial, sans-serif"> Diagrama de Classes</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font> </font><font face="Arial, sans-serif"><font size=2>O diagrama de classes será gerado no fim do projeto usando a ferramenta <i>rDoc</i>.Temporariamente será ilustrado usando um quadro branco e registrado com fotografia o esboço da idéia.</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:0.5in>
+  <font size=2><font face="Lucida Grande">⁃</font> </font><font face="Arial, sans-serif"><font size=3>Organização do ambiente</font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font> </font><font face="Arial, sans-serif"><font size=2><font size=3>Nesta etapa serão criados as classes básicas e a estrutura que permita iniciar no ambiente de testes automatizados e organização das funcionalidades no formato coerente para escrever testes de c</font></font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande"><font size=3>comportamento.</font></font></font>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <br>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <br>
+</p>
+<p class=western style=MARGIN-LEFT:1in>
+  <font size=3><font face="Lucida Grande">⁃</font></font>
+</p>
+<ul>
+  <li>
+    <font size=3><font face="Lucida Grande">Codificação dos testes e das classes.<br>
+    </font></font>
+  </li>
+  <li>
+    <font size=3><font face="Lucida Grande">Extensão das ferramentas existentes para as classes responsáveis.</font></font>
+  </li>
+  <li>
+    <font size=3><font face="Lucida Grande">Estudo e criação do ambiente responsável pela interface com o usuário.<br>
+    </font></font>
+  </li>
+  <li>
+    <font size=3><font face="Lucida Grande">Criação do desktop de desenvolvimento de relatórios.</font></font>
+  </li>
+  <li>
+    <font size=3><font face="Arial, sans-serif">Fechamento do Relatório Final de Estágio.</font></font>
+  </li>
+  <li>
+    <font size=3><font face="Arial, sans-serif">Apresentação à Banca</font></font>
+  </li>
+</ul>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>4 CRONOGRAMA</b></font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><b><font size=4>1</font></b><font size=2>ª </font><b><font size=4> Etapa – Criação do ambiente e o núcleo da funcionalidade.</font></b></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>Nesta fase será desenvolvida as classes responsáveis pela estrutura principal do relatório. Será desenvolvida a biblioteca usada para responder pelas necessidades do documento:</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<ul>
+  <li>
+    <font face="Arial, sans-serif"><font size=4><b>O que vai ter</b></font></font>
+  </li>
+  <ul>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>escolher e manipular uma fonte de dados</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>configure as colunas adicionando as que deseja adicionar para o relatório</font></font>
+    </li>
+  </ul>
+</ul>
+<ul>
+  <ul>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>configuração da template</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>manipular as colunas permitindo formatar e sobrescrever</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>manipular o título e cabeçalho</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>Quanto ao leiaute e exibição do relatório</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>carregar os dados do relatório</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>carregar a saida html a partir de uma template</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>será possível ver o documento apartir de um arquivo html</font></font>
+    </li>
+  </ul>
+  <li>
+    <font face="Arial, sans-serif"><font size=4><b>O que NÃO VAI TER</b></font></font>
+  </li>
+  <ul>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>filtros</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>t</font></font><font face="Arial, sans-serif"><font size=4>otalizadores ou resumosi</font></font>
+    </li>
+    <li>
+      <font face="Arial, sans-serif"><font size=4>i</font></font><font face="Arial, sans-serif"><font size=4>nterface para criar e executar o relatório</font></font>
+    </li>
+  </ul>
+</ul>
+<br>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><b><font size=4>2</font></b><font size=2>ª </font><b><font size=4>Etapa – a interface com o usuário</font></b></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>Nesta fase, será criada uma forma de o usuário interagir com o sistema e criar os seus próprios relatórios, permitindo personalizar os elementos que compõe o relatório, assim como a interação para a execução do relatório.</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<ul>
+  <li>
+    <font face="Arial, sans-serif"><font size=4>Interface para criar e rodar o documento</font></font>
+  </li>
+  <li>
+    <font face="Arial, sans-serif"><font size=4>Permitir que o usuário consiga montar o relatório</font></font>
+  </li>
+  <li>
+    <font face="Arial, sans-serif"><font size=4>Escolha a fonte de dados</font></font>
+  </li>
+  <li>
+    <font face="Arial, sans-serif"><font size=4>Configure as colunas</font></font>
+  </li>
+  <li>
+    <font face="Arial, sans-serif"><font size=4>Configure a template</font></font>
+  </li>
+  <li>
+    <font face="Arial, sans-serif"><font size=4>Execute o relatório</font></font>
+  </li>
+</ul>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>3</font><font size=2>ª </font><font size=4><b>Etapa</b> -Melhorias e amadurecimento da ferramenta</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>1. a interface permitir adicionar filtros</font></font>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4>2. o background e interface permitir agrupamento e sumarização</font></font>
+</p>
+<p class=western>
+  <br>
+</p>
+<p class=western>
+  <br>
+</p>
+<table border=1 bordercolor=#c0c0c0 cellpadding=0 cellspacing=0 width=601>
+  <tbody>
+  <tr valign=top>
+    <td width=66>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2><b>ETAPAS</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2><b>MESES</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p class=western>
+        <br>
+      </p>
+    </td>
+    <th>
+      <p class=western>
+        <br>
+      </p>
+    </th>
+    <th>
+      <p class=western>
+        <br>
+      </p>
+    </th>
+    <th>
+      <p class=western>
+        <br>
+      </p>
+    </th>
+    <th>
+      <p class=western>
+        <br>
+      </p>
+    </th>
+    <th>
+      <p class=western>
+        <br>
+      </p>
+    </th>
+    <th>
+      <p class=western>
+        <br>
+      </p>
+    </th>
+  </tr>
+  <tr valign=top>
+    <td width=66>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Mar</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Abr</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Jun</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Jul</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Ago</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Set</b></font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Out</b></font></font>
+      </p>
+    </td>
+    <td width=66>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=1><b>Nov</b></font></font>
+      </p>
+    </td>
+  </tr>
+  <tr valign=top>
+    <td width=66>
+      <p class=western>
+        <font face="Arial, sans-serif"><font size=2>1ª Etapa</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=66>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+  </tr>
+  <tr valign=top>
+    <td width=66>
+      <p class=western>
+        <font face="Arial, sans-serif"><font size=2>2ª Etapa</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=66>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+  </tr>
+  <tr valign=top>
+    <td width=66>
+      <p class=western>
+        <font face="Arial, sans-serif"><font size=2>3ª Etapa</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=66>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+  </tr>
+  <tr valign=top>
+    <td width=66>
+      <p class=western>
+        <font face="Arial, sans-serif"><font size=2>Relatório Final de estágio</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=66>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+  </tr>
+  <tr valign=top>
+    <td width=66>
+      <p class=western>
+        <font face="Arial, sans-serif"><font size=2>Apresentação em banca</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=67>
+      <p align=center class=western>
+        <br>
+      </p>
+    </td>
+    <td width=66>
+      <p align=center class=western>
+        <font face="Arial, sans-serif"><font size=2>XX</font></font>
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<p class=western>
+  <br>
+  <br>
+</p>
+<p class=western>
+  <font face="Arial, sans-serif"><font size=4><b>6 REFERÊNCIAS</b></font></font>
+</p>
+<p class=western>
+  <font size=4><font face="Arial, sans-serif">[1] FOWLER, M. <b>Extreme Programming.</b> http://www.extremeprogramming.org/what.html. Acesso em 26 de março de 2009.</font></font>
+</p>
+<p class=western>
+  <font size=4><font face="Arial, sans-serif">[2] <b>Behavior Development Driven:</b> http://behaviour-driven.org. Acesso em 26 de março de 2009.</font></font>
+</p>
+<p class=western>
+  <font size=4><font face="Arial, sans-serif">[3] FOWLER, M.<b> Use cases and Stories</b>: http://www.martinfowler.com/bliki/UseCasesAndStories.html . Acesso em 26 de março de 2009.</font></font>
+</p>
+<p align=justify class=western>
+  <font size=2><font face="Arial, sans-serif">ÚLTIMO SOBRENOME, Prenomes. <b>Título da obra.</b> Número da Edição. Local de Publicação: Nome da editora, ano de publicação.</font></font>
+</p>
+<p align=justify class=western>
+  <font face="Arial, sans-serif"><font size=4><b>6 ASSINATURAS DOS RESPONSÁVEIS</b></font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=2>Jônatas Davi Paganini</font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Estagiário</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=2>Professor Almir de Andrade</font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Coordenadora de Estágio</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=2>Alexsandra Medeiros</font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Supervisor de Estágio na Empresa</b></font></font>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <br>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=2>Professor Edson Lucas Albano</font></font>
+</p>
+<p align=center class=western>
+  <font face="Arial, sans-serif"><font size=3><b>Professor Supervisor</b></font></font>
+</p>
+<br></body>
+</html>
