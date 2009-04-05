@@ -17,6 +17,8 @@ module Troper
   end
 end
 
+require 'forwardable'
+
 require File.join(Troper.lib, "report.rb")
 require File.join(Troper.lib, "datasource.rb")
 require File.join(Troper.lib, "rails_datasources.rb")
