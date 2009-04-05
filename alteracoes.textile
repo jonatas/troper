@@ -44,3 +44,4 @@ Dado um novo relatorio
 ** Alteração das funcionalidades para as features começarem a funcionar e poder usar os testes usando rake features.
 ** Adicionado núcleo do desenvolvimento para prosseguir escrevendo as funcionalidades e testando. 
 ** Criado a primeira instância de funcionamento do report, extendendo as funcionalidades do ActiveRecord e adicionado as colunas por default.
+** Adicionado console de interação
