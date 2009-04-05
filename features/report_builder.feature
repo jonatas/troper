@@ -1,5 +1,9 @@
 Feature: Manage reports using simple steps to build. 
-  Scenario: Create a simple report using a table as datasource.
+  In order to create a simple report using table
+  As a simple user 
+  I want to create a simple report using the options default.
+
+  Scenario: Create a simple report using a table as datasource:
     Given that I'm able to see a people table
 
     When I'm looking form columns for this report

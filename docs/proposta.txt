@@ -36,18 +36,12 @@ Alexsandra Medeiros
 
 h2. Introdução
 
-* Aplicativos na internet
-** Todos os dias vemos um novo aplicativo na internet
-** A Leosoft tem muitos desses
-
-* A partir de um feedback
-
-Projetos de software geralmente apresentam foco em algumas partes e vantagens para as mesmas. A Leosoft sempre teve um bom feedback em um de seus sistemas por possuir uma ferramenta para construir relatórios de maneira fácil e útil. Os usuários se sentem bem por ter liberdade para construir/modificar relatórios para suas necessidades específicas.
+Sistema para gerar e executar relatórios na web, agregado a outro sistema já existente.
+Projetos de software em geral apresentam foco em algumas partes e vantagens para as mesmas. A Leosoft sempre teve um bom feedback em um de seus sistemas por possuir uma ferramenta para construir relatórios de maneira fácil e útil. Os usuários se sentem bem por ter liberdade para construir/modificar relatórios para suas necessidades específicas.
 
 h2. Objetivos (geral)
 
-Abraçar todas as idéias na construção de um software não dá certo, o objetivo do projeto é encontrar um escopo para a construção de relatórios simples e personalizados.
-
+O objetivo do projeto é encontrar um escopo para a construção de relatórios simples e personalizados.
 
 h3. Construir relatórios  (objetivos específicos)
 
@@ -73,6 +67,8 @@ iReport é uma interface robusta escrita em java, que dá a possibilidade de aju
 Cada pessoa gosta de uma cor, ver o nome antes do telefone, não usa o telefone e apenas celular. Dificilmente um sistema irá agradar a todos os usuários. Essa interface irá trazer ao usuário uma forma para fazer estas mudanças sem a necessidade de um pedido aos desenvolvedores do software.
 O uso de uma ferramenta complexa para a execução do trabalho diminui a possibilidade de o usuário fazer tarefas triviais desvalorizando o projeto por detalhes que até então eram sem importância.
 
+
+
 h2. Valores agregados ao sistema
 
 * Ser plugável
@@ -97,7 +93,7 @@ Basicamente uma aplicação web consiste em dois lados do aplicativo: cliente e 
 
 * Interface - cliente
 ** jQuery 
-uma ótima biblioteca para simplificar o manuseio de documentos HTML
+uma biblioteca para simplificar o manuseio de documentos HTML
 ** ExtJs
 uma biblioteca para construir interfaces ricas na web usando javascript
 
@@ -155,9 +151,7 @@ h3. Primeira fase - Criação do ambiente e o núcleo da funcionalidade.
 Nesta fase será desenvolvida as classes responsáveis pela estrutura principal do relatório. Será desenvolvida a biblioteca usada para responder pelas necessidades do documento:
 
 # O que **vai ter** 
-
 ## Escolher e manipular uma fonte de dados
-
 ## Configure as colunas adicionando as que deseja adicionar para o relatório
 
 ## Configure a template
@@ -191,5 +185,31 @@ h3. Terceira fase
 # Melhorias - amadurecimento da idéia e ferramenta
 ## o background e interface permitir agrupamento e sumarização
 ## a interface permitir adicionar filtros
+
+
+h3. Fundamentação teórica
+
+Por que utilizar a metodologia Extreme Programming?
+
+bq. Extreme Programming (XP) é uma metodologia que se aproxima da realidade do ambiente de desenvolvimento de softwares. Com 8 anos de existência, vem melhorando muitas empresas de diversos tamanhos pelo mundo.
+A metodologia foi desenhada para entregar o software que o cliente pediu quando ele pediu. XP efatiza também o trabalho em time. Gerentes e clientes e desenvolvedores compõem um time dedicado a entregar um software de qualidade.
+
+Por que usar Behaviour Development Driven?
+
+bq. Desenvolvimento orientado a comportamento (BDD) traz uma interação completa do desenvolvimento orientado a testes e desenvolvimento orientado a domínio, fazendo relacionamentos entre essas forças tornando o desenvolvimento de software mais evidente.
+
+Por que usar estórias do usuário ao invés de casos de uso?
+
+bq. Essa é uma questão comum, e muitas pessoas do XP consideram estórias como uma forma simplificada de casos de uso. Casos de uso  estórias são similares maneiras de organizar requisitos. Eles são diferentes no que organizam para diferentes propósitos. Casos de uso organizam requisitos na forma narrativa e como os usuários se relacionam e usam o sistema. Mantendo o foco nos alvos e como o sistema interage com estes alvos. Estórias XP quebram requisitos em pequenos pedaços para planejar propósitos. Elas são quebradas em partes pequenas até poderem ser estimadas.
+
+
+h3. Referências
+
+**Extreme Programming**: http://www.extremeprogramming.org/what.html. Acesso em 26 de março de 2009. 
+
+**Behavior Development Driven**: http://behaviour-driven.org. Acesso em 26 de março de 2009.
+
+**FOWLER, M. Use cases and Stories**: http://www.martinfowler.com/bliki/UseCasesAndStories.html . Acesso em 26 de março de 2009.
+
 
 

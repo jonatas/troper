@@ -40,4 +40,5 @@ Dado um novo relatorio
 ** Adição das funcionalidades em inglês, criando a primeira. 
 
 
-
+* 05/04/2009 - [ jonatas ]
+** Alteração das funcionalidades para as features começarem a funcionar e poder usar os testes usando rake features.
