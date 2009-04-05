@@ -5,7 +5,7 @@ begin
     t.cucumber_opts = "--format pretty"
   end
   Cucumber::Rake::Task.new('features:html') do |t|
-    t.cucumber_opts = "--format html --out funcionalidades.html --language pt"
+    t.cucumber_opts = "--format html --out docs/features.html"
   end
 rescue LoadError
   puts "Erro tentando rodar as features",$!,"-"*50,$@
