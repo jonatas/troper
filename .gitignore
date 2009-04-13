@@ -1,2 +1,3 @@
 docs
  *.html
+lib/rails_example/log/*
