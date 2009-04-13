@@ -1,13 +1,8 @@
 Feature: Manage reports using simple steps to build. 
-  In order to create a simple report using table
-  As a simple user 
-  I want to create a simple report using the options default.
-
-  Scenario: Create a simple report using a table as datasource:
-    Given that I am able to see a people table
-
-    When I am looking form columns for this report
-      And should be equal: name, email, phone
+  Scenario: Create a simple report using a table as datasource.
+     Given that I am able to see a people table
+     When I am looking for columns of this report
+     And should be equal: name, email, phone
 
       When I am looking for column 'name'
         Then the label should be equal 'Name'
