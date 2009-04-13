@@ -3,7 +3,7 @@ Given /^that I am able to see a (\w+) table$/ do |table|
   @report.model.table_name.should == table
 end
 
-When /^I am looking form columns for this report$/ do
+When /^I am looking for columns of this report$/ do
   @columns = @report.columns
 end
 
