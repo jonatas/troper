@@ -45,3 +45,16 @@ Dado um novo relatorio
 ** Adicionado núcleo do desenvolvimento para prosseguir escrevendo as funcionalidades e testando. 
 ** Criado a primeira instância de funcionamento do report, extendendo as funcionalidades do ActiveRecord e adicionado as colunas por default.
 ** Adicionado console de interação
+
+
+* 12/04/2009 - [ jonatas ]
+** Adicionado a nova documentação do word.
+*** Incluído referências bíbliográficas.
+*** Re-formatado.
+
+** Adicionado estrutura das colunas para funcionar em ambiente de execução..
+** Adicionado extensão do liquid.
+*** Adicionado os primeiros Formatters default.
+*** Adicionado build_value e grid para build da coluna e relatório.
+*** Primeira template do liquid super-simples.
+
