@@ -3,13 +3,11 @@
 ** criado o arquivo para logar as atualizações
 ** alterado os arquivos de texto para o formato textile que ficam formatados em html também
 
-
 * 08/03/2009 - [ jonatas ]
 ** organização da documentação para os professores se encontrarem no projeto
 ** alterado o leaiute cs
 ** novidades na documentação a respeito das vantagens de uso do projeto
 ** adicionado ferramentas e bibliotecas necessárias para o desenvolvimento
-
 
 * 16/03/2009 - [ jonatas ]
 ** criado mais algumas descrições das funcionalidades
@@ -34,11 +32,9 @@ Dado um novo relatorio
 
 ** Adição do cronograma e divisão das fases do sistema
 
-
 * 23/03/2009 - [ jonatas ]
 ** Alteração das funcionalidades para usar colunas.
 ** Adição das funcionalidades em inglês, criando a primeira. 
-
 
 * 05/04/2009 - [ jonatas ]
 ** Alteração das funcionalidades para as features começarem a funcionar e poder usar os testes usando rake features.
@@ -46,8 +42,8 @@ Dado um novo relatorio
 ** Criado a primeira instância de funcionamento do report, extendendo as funcionalidades do ActiveRecord e adicionado as colunas por default.
 ** Adicionado console de interação
 
-
-* 12/04/2009 - [ jonatas ]
+* 12/04/2009 - [ jonatas, almir ]
+** Alterado os Objetivos do Projeto para serem os objetivos do estágio. 
 ** Adicionado a nova documentação do word.
 *** Incluído referências bíbliográficas.
 *** Re-formatado.
@@ -57,4 +53,18 @@ Dado um novo relatorio
 *** Adicionado os primeiros Formatters default.
 *** Adicionado build_value e grid para build da coluna e relatório.
 *** Primeira template do liquid super-simples.
+
+* 15/04/2009 - [ jonatas, almir ]
+* Conversado com o Almir a respeito do projeto e as alterações que eu havia feito para entregar. Confirmado que o projeto estava ok para ser entregado.
+
+* 16/04/2009 - [ jonatas, lucas ]
+* Entrega do projeto ao Professor Edson Lucas Albano.
+
+* 21/04/2009 - [ jonatas ]
+** Adicionado extensão dos models do sistema para renderizarem mesmo sem terem os próprios métodos to_liquid.
+** Alterado e extraído a classe template do report
+** Adicionado métodos forwardable para reinderizar o relatório pela template
+** Delegado ao liquid para fazer os filtros na hora que for reinderizar a template.
+** Retirado tentativa de método usando 'filtered_data'
+** Revisto histórico de alterações
 

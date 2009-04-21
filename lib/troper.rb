@@ -26,6 +26,7 @@ require 'liquid'
 
 require File.join(Troper.lib, "column.rb")
 require File.join(Troper.lib, "columns.rb")
+require File.join(Troper.lib, "template.rb")
 require File.join(Troper.lib, "report.rb")
 require File.join(Troper.lib, "datasource.rb")
 require File.join(Troper.lib, "formatters.rb")

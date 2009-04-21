@@ -46,5 +46,7 @@ Feature: Manage reports using simple steps to build.
 
    When I am looking for output
    Then will get a string builded on template
+   
+   When I put a new filter to get only people with phone
+   Then I will see it on the template to resource
       
-
