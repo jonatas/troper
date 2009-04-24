@@ -471,3 +471,5 @@ Migrating to CreatePeople (20090405200052)
   [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m

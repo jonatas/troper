@@ -9,6 +9,7 @@ explicação sobre diretórios e arquivos:
 ** arquitetura.txt - idéia inicial do comportamento do framework e como irá lidar com as estruturas internamente.
 ** caminho_das_pedras.txt - organização das idéias de como vai funcionar o sistema passo a passo.
 ** proposta.txt - proposta do projeto de estágio da Unipar.
+** projeto.doc - arquivo que dirige o projeto geral de estágio.
 
 * script/
 pasta dos scripts ruby para automatizar tarefas triviais do desenvolvimento 

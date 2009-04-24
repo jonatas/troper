@@ -2,8 +2,8 @@ funcionalidades para construir:
 * construção do relatório
 Funcionalidade: Construir um novo relatório apartir de uma fonte de dados, podendo escolher as colunas, alterar os valores, leiaute, adicionar totalizadores e filtros.
   Cenário: Criar um novo relatório apartir de uma fonte de dados e seguir os passos normais para a conclusão da tarefa.
-    Dado que escolhi a fonte de dados clientes
-    Então deve ser capaz de saber as colunas do cliente
+    Dado que escolhi a fonte de dados clientes # ok
+    Então deve ser capaz de saber as colunas do cliente #ok
     Então deve conter as colunas nome, telefone, email 
       E o label da coluna nome deverá ser "Nome"
       E a expressão da coluna deve ser "cliente.nome"
@@ -29,11 +29,13 @@ Funcionalidade: Construir um novo relatório apartir de uma fonte de dados, pode
 ** template
 
 * execução
-** sequencia da montagem dos dados
-*** filtros
-*** montagem da consulta
-*** obtenção dos dados
-*** imprimindo em tempo real
-**** alterar as colunas - formatadores
+** sequencia da montagem dos dados #
+*** filtros de objeto # ok
+*** filtros de banco de dados# ok
+
+*** montagem da consulta #ok 
+*** obtenção dos dados #ok 
+*** imprimindo em tempo real # ok 
+**** alterar as colunas - formatadores # ok 
 **** criar todalizadores
 
