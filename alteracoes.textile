@@ -68,3 +68,5 @@ Dado um novo relatorio
 ** Retirado tentativa de método usando 'filtered_data'
 ** Revisto histórico de alterações
 
+* 18/04/2009 - [ jonatas, almir ]
+** Conversado como Almir e colocado a par da situação e andamento do sistema.
