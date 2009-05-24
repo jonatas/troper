@@ -19,8 +19,8 @@ tarefas rake - use rake --tasks para ver a lista de tarefas
 
 * Rakefile -- organiza as tarefas rake
 
-* alteracoes.textile 
-histórico de alterações no projeto
+* acompanhamento.textile 
+histórico de alterações no projeto, guia de acompanhamento contabilizando as horas e tarefas, juntamente com os professores.
 
 para gerar a documentação digite:
 <code>
