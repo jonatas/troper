@@ -1,0 +1,25 @@
+<html>
+ <head>
+    <title>Relatório Mensal de Acompanhamento</title>
+ </head>
+ <h1>Tarefas Desenvolvidas</h1>
+ <table border="1" cellpadding="1">
+  <tr>
+   <th colspan="4">Aluno: Jônatas Davi Paganini - 3054</th>
+  </tr>
+  <tr>
+   <th>Data</th>
+   <th>Tempo</th>
+   <th>Atividade</th>
+   <th>Visto<th>
+  </tr>
+  {% for tarefa in tarefas %}
+    <tr>
+     <td>{{ tarefa.data }}</td>
+     <td>{{ tarefa.tempo }}</td>
+     <td>{{ tarefa.atividades | textilize }}</td>
+     <td>Professor<br><br>Aluno</td>
+    </tr>
+  {% endfor %} 
+ </table>
+</html>
