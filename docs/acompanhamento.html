@@ -1,25 +1,50 @@
-<html>
- <head>
-    <title>Relatório Mensal de Acompanhamento</title>
- </head>
- <h1>Tarefas Desenvolvidas</h1>
- <table border="1" cellpadding="1">
-  <tr>
-   <th colspan="4">Aluno: Jônatas Davi Paganini - 3054</th>
-  </tr>
-  <tr>
-   <th>Data</th>
-   <th>Tempo</th>
-   <th>Atividade</th>
-   <th>Visto<th>
-  </tr>
-  {% for tarefa in tarefas %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acompanhamento Mensal de Tarefas Desenvolvidas</title>
+  </head>
+  <img src="docs/unipar_logo.png" style="float: left" width=50 />
+  {% if mes %}
+    <h1 align='center'>Acompanhamento das tarefas do mês {{ mes }}</h1>
+  {% else %}
+    <h1 align='center'>Acompanhamento das Tarefas Desenvolvidas</h1>
+  {% endif %}
+  <table border="1" cellpadding="1">
     <tr>
-     <td>{{ tarefa.data }}</td>
-     <td>{{ tarefa.tempo }}</td>
-     <td>{{ tarefa.atividades | textilize }}</td>
-     <td>Professor<br><br>Aluno</td>
+      <th colspan="4">Aluno: Jônatas Davi Paganini - 3054</th>
     </tr>
-  {% endfor %} 
- </table>
-</html>
+    <tr>
+      <th>Data</th>
+      <th>Tempo</th>
+      <th>Atividade</th>
+      <th>Participantes<th>
+        </tr>
+        {% for tarefa in tarefas %}
+        <tr>
+          <td>{{ tarefa.data }}</td>
+          <td>{{ tarefa.tempo }}</td>
+          <td>{{ tarefa.atividades | textilize }}</td>
+          <td>{{ tarefa.envolvidos | quebrar_por_linha }}</td>
+        </tr>
+        {% endfor %} 
+
+        <tr>
+          <td>Total</td>
+          <td>{{ total_horas }} horas</td>
+        </tr>
+      </table>
+      <br><br>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <td width="50%" align="center">Estagiário: Jônatas Davi Paganini</td>
+            <td width="50%" align="center">Orientador: Almir de Andrade</td>
+          </tr><tr>
+            <td width="50%" align="center">------------------------------------------</td>
+            <td width="50%" align="center">------------------------------------------</td>
+          </tr>
+      </tbody>
+    </table>
+    <br>
+    Data: {{ data | formatar_data }}
+    </html>

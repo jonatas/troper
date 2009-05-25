@@ -1,15 +1,15 @@
-* 03/03/2009 - [ jonatas ]
+* 03/03/2009 - [ jonatas ] - 2 horas
 ** renomeado a estrutura das pastas ficar mais conveniente com o projeto
 ** criado o arquivo para logar as atualizações
 ** alterado os arquivos de texto para o formato textile que ficam formatados em html também
 
-* 08/03/2009 - [ jonatas ]
+* 08/03/2009 - [ jonatas ] - 6 horas
 ** organização da documentação para os professores se encontrarem no projeto
-** alterado o leaiute cs
+** alterado o leaiute css
 ** novidades na documentação a respeito das vantagens de uso do projeto
 ** adicionado ferramentas e bibliotecas necessárias para o desenvolvimento
 
-* 16/03/2009 - [ jonatas ]
+* 16/03/2009 - [ jonatas ] - 7 horas
 ** criado mais algumas descrições das funcionalidades
 ** estudo a respeito das ferramentas
 *** Cucumber::Ast::Table - cogitado a possibilidade de extender esta lib para usar as tabelas e grids e métodos para instanciar o datagrid que será necessário no software
@@ -27,22 +27,22 @@ Dado um novo relatorio
 
 *** Comparação entre o uso do Report::Data::Table e Cucumber::Ast::Table
 
-* 17/03/2009 - [ jonatas ]
+* 17/03/2009 - [ jonatas ] - 3 horas
 ** Alteração da biblioteca de templates do projeto, pois analisando a biblioteca rubytenji e liquid, optar por liquid torna o projeto mais simples e mais extensível se tratando da interação com o usuário e a forma de formatar os campos. Com rubytenji iria ter que escrever os formatadores e a forma de extensão seria escrita por mim. Tornando assim liquid um caminho mais curto para a geração das tempates.
 
 ** Adição do cronograma e divisão das fases do sistema
 
-* 23/03/2009 - [ jonatas ]
+* 23/03/2009 - [ jonatas ] - 4 horas
 ** Alteração das funcionalidades para usar colunas.
 ** Adição das funcionalidades em inglês, criando a primeira. 
 
-* 05/04/2009 - [ jonatas ]
+* 05/04/2009 - [ jonatas ] - 4 horas
 ** Alteração das funcionalidades para as features começarem a funcionar e poder usar os testes usando rake features.
 ** Adicionado núcleo do desenvolvimento para prosseguir escrevendo as funcionalidades e testando. 
 ** Criado a primeira instância de funcionamento do report, extendendo as funcionalidades do ActiveRecord e adicionado as colunas por default.
 ** Adicionado console de interação
 
-* 12/04/2009 - [ jonatas, almir ]
+* 12/04/2009 - [ jonatas, almir ] - 1 hora
 ** Alterado os Objetivos do Projeto para serem os objetivos do estágio. 
 ** Adicionado a nova documentação do word.
 *** Incluído referências bíbliográficas.
@@ -54,13 +54,13 @@ Dado um novo relatorio
 *** Adicionado build_value e grid para build da coluna e relatório.
 *** Primeira template do liquid super-simples.
 
-* 15/04/2009 - [ jonatas, almir ]
+* 15/04/2009 - [ jonatas, almir ] - 1 hora 
 * Conversado com o Almir a respeito do projeto e as alterações que eu havia feito para entregar. Confirmado que o projeto estava ok para ser entregado.
 
-* 16/04/2009 - [ jonatas, lucas ]
+* 16/04/2009 - [ jonatas, lucas ] - 1 hora 
 * Entrega do projeto ao Professor Edson Lucas Albano.
 
-* 21/04/2009 - [ jonatas ]
+* 21/04/2009 - [ jonatas ] - 4 horas
 ** Adicionado extensão dos models do sistema para renderizarem mesmo sem terem os próprios métodos to_liquid.
 ** Alterado e extraído a classe template do report
 ** Adicionado métodos forwardable para reinderizar o relatório pela template
@@ -68,10 +68,10 @@ Dado um novo relatorio
 ** Retirado tentativa de método usando 'filtered_data'
 ** Revisto histórico de alterações
 
-* 18/04/2009 - [ jonatas, almir ]
+* 18/04/2009 - [ jonatas, almir ] - 1 hora
 ** Conversado como Almir e colocado a par da situação e andamento do sistema.
 
-* 05/05/2009 - [ jonatas, alexsandra, edson, leandro ]
+* 05/05/2009 - [ jonatas, alexsandra, edson, leandro ] - 1 hora
 ** Mostrado o protótipo e aceito a primeira fase pela cliente.
 ** Exemplificado o uso do sistema e como gostaria de interagir.
  
