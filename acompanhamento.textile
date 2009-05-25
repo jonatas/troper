@@ -75,4 +75,9 @@ Dado um novo relatorio
 ** Mostrado o protótipo e aceito a primeira fase pela cliente.
 ** Exemplificado o uso do sistema e como gostaria de interagir.
  
+* 24/05/2009 - [ jonatas ] - 3 horas
+** Reformado o formato padrão do documento de acompanhamento para conter a quantidade de horas.
+** Criado uma forma padrão de gerar o relatório mensal usando tarefa rake
+** rake acompanhamento # gera um relatório com todas as atividades
+** rake acompanhamento mes=04 gera o relatório do mês 04
 
