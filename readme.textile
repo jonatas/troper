@@ -26,3 +26,8 @@ para gerar a documentação digite:
 <code>
 rake docs
 </code>
+
+para gerar o relatório mensal de estágio do mês 4 digite:
+<code>
+rake acompanhamento mes=04
+</code>
