@@ -36,6 +36,9 @@ Dado um novo relatorio
 ** Alteração das funcionalidades para usar colunas.
 ** Adição das funcionalidades em inglês, criando a primeira. 
 
+* 29/03/2009 - [ jonatas ] - 4 horas
+** Estudo do framework Rails 
+
 * 05/04/2009 - [ jonatas ] - 4 horas
 ** Alteração das funcionalidades para as features começarem a funcionar e poder usar os testes usando rake features.
 ** Adicionado núcleo do desenvolvimento para prosseguir escrevendo as funcionalidades e testando. 
@@ -54,11 +57,17 @@ Dado um novo relatorio
 *** Adicionado build_value e grid para build da coluna e relatório.
 *** Primeira template do liquid super-simples.
 
+* 14/04/2009 - [ jonatas, almir ] - 1 hora
+** Conversado como Almir e colocado a par da situação e andamento do sistema. O Almir encontrou alguns problemas na definição do projeto do estágio confusas com o projeto do software.
+
 * 15/04/2009 - [ jonatas, almir ] - 1 hora 
 * Conversado com o Almir a respeito do projeto e as alterações que eu havia feito para entregar. Confirmado que o projeto estava ok para ser entregado.
 
 * 16/04/2009 - [ jonatas, lucas ] - 1 hora 
 * Entrega do projeto ao Professor Edson Lucas Albano.
+
+* 19/04/2009 - [ jonatas ] - 4 horas
+* Estudo do framework ActiveRecord e integração com o Rails::Core 
 
 * 21/04/2009 - [ jonatas ] - 4 horas
 ** Adicionado extensão dos models do sistema para renderizarem mesmo sem terem os próprios métodos to_liquid.
@@ -68,16 +77,49 @@ Dado um novo relatorio
 ** Retirado tentativa de método usando 'filtered_data'
 ** Revisto histórico de alterações
 
-* 18/04/2009 - [ jonatas, almir ] - 1 hora
-** Conversado como Almir e colocado a par da situação e andamento do sistema.
+* 26/04/2009 - [ jonatas ] - 5 horas
+* Estudo do framework ActiveScaffold e bons exemplos de inflecção com o bd.
 
 * 05/05/2009 - [ jonatas, alexsandra, edson, leandro ] - 1 hora
 ** Mostrado o protótipo e aceito a primeira fase pela cliente.
 ** Exemplificado o uso do sistema e como gostaria de interagir.
+
+* 09/05/2009 - [ jonatas ] - 6 horas
+** Estudo do Framework jQuery
+*** Como adicionar eventos
+*** Princípios do jQuery
+*** Concisão dos métodos
+*** Seletores
+
+* 10/05/2009 - [ jonatas ] - 7 horas
+** Estudo do Framework ExjJS
+*** Como carregar arquivos
+*** Manipulação de elementos dinâmicos 
+*** Elementos do form
+*** Opções de extensibilidade do framework
+
+* 14/05/2009 - [ jonatas, almir ] - 1 hora
+** Apresentado o protótipo do funcionamento no console de iteração
+** Apresentado exemplos de aplicação da biblioteca ExtJS para criação da interface visual
+
+* 17/05/2009 - [ jonatas ] - 2 horas
+** Estudo do Framework ExjJS
+*** Leiautes
+*** Leiautes Aninhados
+*** _Component_ é a classe principal dos componentes de acesso rápido e conciso.
+
+* 19/05/2009 - [ jonatas ] - 6 horas
+** Estudo sobre o group by e as formas de criar group by.
+** Postado no fórum do liquid template sobre a questão (sem resposta)
+** Analisado a forma de trabalho do framework ExtJS quanto ao Group By
  
-* 24/05/2009 - [ jonatas ] - 3 horas
+* 24/05/2009 - [ jonatas ] - 4 horas
 ** Reformado o formato padrão do documento de acompanhamento para conter a quantidade de horas.
 ** Criado uma forma padrão de gerar o relatório mensal usando tarefa rake
 ** rake acompanhamento # gera um relatório com todas as atividades
 ** rake acompanhamento mes=04 gera o relatório do mês 04
+
+* 29/05/2009 - [ jonatas ] - 2 horas
+** Catalogado mais algumas tarefas desenvolvidas
+** Documentado tarefas adicionais de estudo das ferramentas para desenvolvimento
 
