@@ -123,3 +123,7 @@ Dado um novo relatorio
 ** Catalogado mais algumas tarefas desenvolvidas
 ** Documentado tarefas adicionais de estudo das ferramentas para desenvolvimento
 
+* 02/06/2009 - [ jonatas ] - 3 horas
+** Documentação da classe Report com exemplos
+** Inclusão da dependência com Hoe para poder gerar a documentação
+

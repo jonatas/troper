@@ -5,6 +5,7 @@ projeto para construção e execução de relatórios na web.
 explicação sobre diretórios e arquivos:
 
 * docs/ - pasta com arquivos da documentação no formato txt usando a marcação "textile":http://hobix.com/textile/quick.html
+* doc/ - pasta com a documentação do projeto, se estiver vazia é necessário re-gerar a documentação usando: rake rdoc
 
 ** arquitetura.txt - idéia inicial do comportamento do framework e como irá lidar com as estruturas internamente.
 ** caminho_das_pedras.txt - organização das idéias de como vai funcionar o sistema passo a passo.
@@ -24,7 +25,7 @@ histórico de alterações no projeto, guia de acompanhamento contabilizando as 
 
 para gerar a documentação digite:
 <code>
-rake docs
+rake documenta
 </code>
 
 para gerar o relatório mensal de estágio do mês 4 digite:
