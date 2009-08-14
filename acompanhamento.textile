@@ -127,3 +127,24 @@ Dado um novo relatorio
 ** Documentação da classe Report com exemplos
 ** Inclusão da dependência com Hoe para poder gerar a documentação
 
+* 07/06/2009 - [ jonatas ] - 5 horas
+** Estudando projetos Rails (lipsiadmin e lipsiadminblog) para ter uma idéia da forma de trabalho.
+** Analisado estrutura javascript para extender as funcionalidades default:
+*** write a big application using extjs
+*** exemplos do bloglipsiadmin
+*** Aplicação de rjs para construir js como page.grid
+
+* 14/06/2009 - [ jonatas ] - 3 horas
+** Estudando projeto Liquid para funcionar com named_scope no Rails 
+*** A idéia é poder pegar e criar uma funcionalidade como a seguinte {{ for person in person.man.all }}
+<code lang='ruby'>
+class Person < ActiveRecord::Base
+  named_scope :man, :conditions => { :sex => 'M' }
+end
+</code>
+
+* 13/08/2009 - [ jonatas, riedi ] - 1 horas
+** mostrado o sistema como funciona e colocado a par da situação atual
+** trazer diagrama de classe para dia 21/08 - próxima sexta
+** Riedi ficou de trazer o normativo para o estágio
+
