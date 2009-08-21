@@ -148,3 +148,5 @@ end
 ** trazer diagrama de classe para dia 21/08 - próxima sexta
 ** Riedi ficou de trazer o normativo para o estágio
 
+* 21/08/2009 - [ jonatas ] - 1 horas
+** colocado as fotos do diagrama de classes juntamente com a explicação que tinha no projeto
