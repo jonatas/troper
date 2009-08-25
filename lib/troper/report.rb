@@ -24,7 +24,7 @@ module Troper
 
       if not model.instance_method_already_implemented? "to_liquid"
         model.class_eval do 
-        alias_method :to_liquid, :attributes
+          alias_method :to_liquid, :attributes
         end 
       end
       self.template = Troper::Template.new(self)

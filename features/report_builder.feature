@@ -49,4 +49,7 @@ Feature: Manage reports using simple steps to build.
    
    When I put a new filter to get only people with phone
    Then I will see it on the template to resource
+
+   Given that I will join many address for each person
+   Then I will see it on the template to resource
       

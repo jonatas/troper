@@ -51,6 +51,10 @@ When /^I put a new filter to get only people with phone$/ do
   @report.filters << "person.email"
 end
 
+Given /^that I will join many address for each person$/ do
+  @report.join "address"
+end
+
 Then /^I will see it on the template to resource$/ do
   @report.template_to_resource.should include("{% if person.phone")
 end

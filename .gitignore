@@ -1,3 +1,6 @@
+.DS_Store
+doc
+ *
 docs
  *.html
 lib/rails_example/log/*

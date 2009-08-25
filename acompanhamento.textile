@@ -150,3 +150,12 @@ end
 
 * 21/08/2009 - [ jonatas ] - 1 horas
 ** colocado as fotos do diagrama de classes juntamente com a explicação que tinha no projeto
+
+* 21/08/2009 - [ jonatas, riedi ] - 1 horas
+** mostrado o diagrama de classe 
+** definido o refatoração que datasources são feitos via drops ao invés de usar o find do model.
+** trazer o drops funcionando dia 25/08 - próxima terça
+
+* 24/08/2009 - [ jonatas ] - 3 horas
+** refatorado report para não implementar métodos drop a cada instância. De uma forma mais simples, no mesmo mapeamento dos datasources, é extendido os métodos liquid.
+

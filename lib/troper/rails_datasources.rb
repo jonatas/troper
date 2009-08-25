@@ -4,6 +4,10 @@ module Troper
 
     def rails_default_data_sources
       self.models.collect do |model|
+        # liquidifying attributes 
+        if not model.instance_method_already_implemented? "to_liquid"
+          model.class_eval { liquid_methods *model.columns.collect{|c|c.name.to_sym} }
+        end
         Troper::DataSource.new(model)
       end
     end
