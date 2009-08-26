@@ -546,3 +546,47 @@ Migrating to CreatePeople (20090405200052)
   [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mPerson Load (93.7ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mPerson Load (3.0ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (83.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20090405200052)
+Migrating to CreateAddresses (20090826011458)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (550.6ms)[0m   [0;1mCREATE TABLE "addresses" ("id" serial primary key, "person_id" integer, "addr_1" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (25.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090826011458')[0m
+  [4;36;1mSQL (38.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mPerson Load (1.7ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (36.8ms)[0m   [0;1mINSERT INTO "addresses" ("created_at", "updated_at", "addr_1", "person_id") VALUES('2009-08-26 01:17:18.133391', '2009-08-26 01:17:18.133391', E'rua pernambuco, 123, fco beltrao - pr', 1) RETURNING "id"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAddress Load (0.9ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses".person_id = 1) [0m
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses".person_id = 1) [0m
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "addresses" ("created_at", "updated_at", "addr_1", "person_id") VALUES('2009-08-26 01:17:41.076515', '2009-08-26 01:17:41.076515', E'avenida julio assis, fco beltrao - pr', 1) RETURNING "id"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses".person_id = 1) [0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mAddress Load (0.5ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses".person_id = 1) [0m
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mAddress Load (1.0ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses".person_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m

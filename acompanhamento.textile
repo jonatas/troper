@@ -159,3 +159,6 @@ end
 * 24/08/2009 - [ jonatas ] - 3 horas
 ** refatorado report para não implementar métodos drop a cada instância. De uma forma mais simples, no mesmo mapeamento dos datasources, é extendido os métodos liquid.
 
+* 25/08/2009 - [ jonatas, riedi ] - 1 horas
+** mostrado a implementação para o Riedi e adicionado métodos apartir dos reflections do model
+** ficou definido criar as especificações e testes para o mesmo para a próxima terça feira

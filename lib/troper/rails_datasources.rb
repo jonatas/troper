@@ -6,7 +6,7 @@ module Troper
       self.models.collect do |model|
         # liquidifying attributes 
         if not model.instance_method_already_implemented? "to_liquid"
-          model.class_eval { liquid_methods *model.columns.collect{|c|c.name.to_sym} }
+          model.class_eval { liquid_methods *(model.columns.collect{|c|c.name.to_sym} + model.reflections.keys) }
         end
         Troper::DataSource.new(model)
       end

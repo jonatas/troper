@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20090826011458) do
+
+  create_table "addresses", :force => true do |t|
+    t.integer  "person_id"
+    t.text     "addr_1"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone",      :limit => 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tmp", :force => true do |t|
     t.string "outro", :limit => nil
