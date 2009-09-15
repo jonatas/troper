@@ -162,3 +162,11 @@ end
 * 25/08/2009 - [ jonatas, riedi ] - 1 horas
 ** mostrado a implementação para o Riedi e adicionado métodos apartir dos reflections do model
 ** ficou definido criar as especificações e testes para o mesmo para a próxima terça feira
+
+* 02/09/2009 - [ jonatas ] - 2 horas
+** iniciado refactor das mudanças para column não possuir o objeto report - acoplamento fraco e coesao alta
+
+* 14/09/2009 - [ jonatas ] - 2 horas
+** adicionado stack para permitir empilhar consultas na coluna enquanto adicionando
+
+

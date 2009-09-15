@@ -8,10 +8,14 @@ module Troper
     def find_by_name(name)
       self.find { |c| c.name == name }
     end
+
     alias_method :[], :find_by_name
 
 
     def add(column)
+      if column.kind_of?String
+        column = Column.new column
+      end
       self.push column if not find_by_name(column.name)
     end
 

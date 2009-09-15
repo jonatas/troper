@@ -18,7 +18,7 @@ module Troper
 
       self.model.columns.each do |column|
         next if column.primary or column.name =~ /(_id|_count)$|(created|updated)_at$/
-        column = Troper::Column.new column, datasource 
+        column = Troper::Column.new column.name, self.model.to_s.downcase
         @columns.add column
       end
 
