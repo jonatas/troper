@@ -4,13 +4,15 @@ def tarefas
       if @tarefa
         (@tarefas ||= []).push @tarefa
       end
-    @tarefa = {
+    puts "tarefa: ",
+       @tarefa = {
                'data' => $1, 
                'tempo' => $3,
                'envolvidos' => $2.split(", "),
                'atividades' => []
     }
     else
+      puts "atividade #{linha}"
       @tarefa['atividades'] << linha
     end
   end
@@ -48,7 +50,7 @@ task :mensal_empresa do
   tarefas
   arquivo = "relatorio_atividades_empresa_mes_#{ENV['mes']}" 
 
-  @tarefas.delete_if { |tarefa| tarefa['envolvidos'].include? "almir" }
+  @tarefas.delete_if { |tarefa| tarefa['envolvidos'].to_s =~ /almir|riedi/i }
 
   gerar_relatorio(:template => "mensal_empresa", :nome_arquivo => arquivo)
 end
@@ -58,7 +60,8 @@ task :acompanhamento do
   tarefas
   arquivo = "relatorio_acompanhamento"
   arquivo << "_mes_#{ENV['mes']}" if ENV['mes']
-  @tarefas = @tarefas.select { |tarefa| tarefa['envolvidos'].include? "almir" }
+
+  @tarefas = @tarefas.select { |tarefa| tarefa['envolvidos'].to_s =~ /almir|riedi/i }
 
   gerar_relatorio(:template => "acompanhamento", :nome_arquivo => arquivo)
 end

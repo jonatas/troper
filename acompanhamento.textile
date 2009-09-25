@@ -143,6 +143,12 @@ class Person < ActiveRecord::Base
 end
 </code>
 
+* 08/07/2009 - [ jonatas ] - 5 horas
+** Estudando livro do EXT JS
+
+* 19/07/2009 - [ jonatas ] - 1 horas
+** Estudando livro do EXT JS
+
 * 13/08/2009 - [ jonatas, riedi ] - 1 horas
 ** mostrado o sistema como funciona e colocado a par da situação atual
 ** trazer diagrama de classe para dia 21/08 - próxima sexta
@@ -169,4 +175,6 @@ end
 * 14/09/2009 - [ jonatas ] - 2 horas
 ** adicionado stack para permitir empilhar consultas na coluna enquanto adicionando
 
-
+* 24/09/2009 - [ jonatas, riedi ] - 2 horas
+** organizando documentação do estágio
+** conversa com riedi sobre não ter vindo na reuniao do estagio e combinado que será enviado por email
