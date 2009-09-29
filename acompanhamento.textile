@@ -178,3 +178,20 @@ end
 * 24/09/2009 - [ jonatas, riedi ] - 2 horas
 ** organizando documentação do estágio
 ** conversa com riedi sobre não ter vindo na reuniao do estagio e combinado que será enviado por email
+
+* 28/09/2009 - [ jonatas, riedi ] - 2 horas
+
+* organizar docs
+** normalizado e atualizado com hoe para gerar a gem
+** adicionado exemplo e sinopse
+** adicionado defeitos e bugs
+** adicionados exemplos de uso no terminal
+
+* falta 
+** normalizar projeto
+** anexar as fotos do quadro
+** anexar diagrama de classe
+** gerar rdoc
+** gerar features html
+** traduzir features html
+

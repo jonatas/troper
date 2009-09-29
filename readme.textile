@@ -1,34 +1,286 @@
-**TROPER**
+= TROPER 
 
-projeto para construção e execução de relatórios na web.
+Plugin para construção e execução de relatórios na web.
 
-explicação sobre diretórios e arquivos:
+== DESCRIPTION:
 
-* docs/ - pasta com arquivos da documentação no formato txt usando a marcação "textile":http://hobix.com/textile/quick.html
-* doc/ - pasta com a documentação do projeto, se estiver vazia é necessário re-gerar a documentação usando: rake rdoc
+Troper é um plugin que irá ler os models do sistema hospedeiro, assim como suas reflexões através do mapeador objeto relacional ActiveRecord.
 
-** arquitetura.txt - idéia inicial do comportamento do framework e como irá lidar com as estruturas internamente.
-** caminho_das_pedras.txt - organização das idéias de como vai funcionar o sistema passo a passo.
-** proposta.txt - proposta do projeto de estágio da Unipar.
-** projeto.doc - arquivo que dirige o projeto geral de estágio.
+== FEATURES/PROBLEMS:
 
-* script/
+- Ainda não possui interface
+- Funciona usando liquid templates
+- Adiciona métodos to_liquid automaticamente para os atributos e outros modelos associados
+
+== SYNOPSIS:
+  
+  puts Troper::Report.new("people").output
+
+  => <table id="people"><th><td>Name</td><td>Email</td><td>Phone</td></th>
+      <tr><td>Jonatas Davi Paganini</td><td>jonatasdp@gmail.com</td><td>46 9911 7879</td></tr>
+      <tr><td>Peter Pan</td><td>peter@pan.net</td><td>46 8822 8800</td></tr>
+   </table>
+
+
+== REQUIREMENTS:
+
+<code>
+sudo gem install liquid 
+</code>
+
+== INSTALL:
+
+exemplo a partir de um novo projeto rails
+
+<code>
+jonatas@xonatax-mac:~/projetos/rails$ rails -v
+Rails 2.3.2
+jonatas@xonatax-mac:~/projetos/rails$ rails my_first_app
+      create  
+      create  app/controllers
+      create  app/helpers
+      create  app/models
+      create  app/views/layouts
+      create  config/environments
+      create  config/initializers
+      create  config/locales
+      create  db
+      create  doc
+      create  lib
+      create  lib/tasks
+      create  log
+      create  public/images
+      create  public/javascripts
+      create  public/stylesheets
+      create  script/performance
+      create  test/fixtures
+      create  test/functional
+      create  test/integration
+      create  test/performance
+      create  test/unit
+      create  vendor
+      create  vendor/plugins
+      create  tmp/sessions
+      create  tmp/sockets
+      create  tmp/cache
+      create  tmp/pids
+      create  Rakefile
+      create  README
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  config/database.yml
+      create  config/routes.rb
+      create  config/locales/en.yml
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_rails_defaults.rb
+      create  config/initializers/session_store.rb
+      create  config/environment.rb
+      create  config/boot.rb
+      create  config/environments/production.rb
+      create  config/environments/development.rb
+      create  config/environments/test.rb
+      create  script/about
+      create  script/console
+      create  script/dbconsole
+      create  script/destroy
+      create  script/generate
+      create  script/runner
+      create  script/server
+      create  script/plugin
+      create  script/performance/benchmarker
+      create  script/performance/profiler
+      create  test/test_helper.rb
+      create  test/performance/browsing_test.rb
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/index.html
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  public/images/rails.png
+      create  public/javascripts/prototype.js
+      create  public/javascripts/effects.js
+      create  public/javascripts/dragdrop.js
+      create  public/javascripts/controls.js
+      create  public/javascripts/application.js
+      create  doc/README_FOR_APP
+      create  log/server.log
+      create  log/production.log
+      create  log/development.log
+      create  log/test.log
+jonatas@xonatax-mac:~/projetos/rails$ cd my_first_app/
+
+jonatas@xonatax-mac:~/projetos/rails/my_first_app$ use_ruby_187 
+Using ruby 1.8.7 (2008-08-11 patchlevel 72) [i686-darwin9]
+
+jonatas@xonatax-mac:~/projetos/rails/my_first_app$ script/generate scaffold Person name:string email:string phone:string
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/people
+      exists  app/views/layouts/
+      exists  test/functional/
+      exists  test/unit/
+      create  test/unit/helpers/
+      exists  public/stylesheets/
+      create  app/views/people/index.html.erb
+      create  app/views/people/show.html.erb
+      create  app/views/people/new.html.erb
+      create  app/views/people/edit.html.erb
+      create  app/views/layouts/people.html.erb
+      create  public/stylesheets/scaffold.css
+      create  app/controllers/people_controller.rb
+      create  test/functional/people_controller_test.rb
+      create  app/helpers/people_helper.rb
+      create  test/unit/helpers/people_helper_test.rb
+       route  map.resources :people
+  dependency  model
+      exists    app/models/
+      exists    test/unit/
+      exists    test/fixtures/
+      create    app/models/person.rb
+      create    test/unit/person_test.rb
+      create    test/fixtures/people.yml
+      create    db/migrate
+      create    db/migrate/20090929003129_create_people.rb
+jonatas@xonatax-mac:~/projetos/rails/my_first_app$ script/generate scaffold Address street:string city:string state:string references:person
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/addresses
+      exists  app/views/layouts/
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+      exists  public/stylesheets/
+      create  app/views/addresses/index.html.erb
+      create  app/views/addresses/show.html.erb
+      create  app/views/addresses/new.html.erb
+      create  app/views/addresses/edit.html.erb
+      create  app/views/layouts/addresses.html.erb
+   identical  public/stylesheets/scaffold.css
+      create  app/controllers/addresses_controller.rb
+      create  test/functional/addresses_controller_test.rb
+      create  app/helpers/addresses_helper.rb
+      create  test/unit/helpers/addresses_helper_test.rb
+       route  map.resources :addresses
+  dependency  model
+      exists    app/models/
+      exists    test/unit/
+      exists    test/fixtures/
+      create    app/models/address.rb
+      create    test/unit/address_test.rb
+      create    test/fixtures/addresses.yml
+      exists    db/migrate
+      create    db/migrate/20090929003452_create_addresses.rb
+</code>
+
+depois disso precisamos adicionar as tags que indicam os relacionamentos entre os modelos:
+
+<code>
+jonatas@xonatax-mac:~/projetos/rails/my_first_app$ cat app/models/*
+
+class Address < ActiveRecord::Base
+  belongs_to :person
+end
+
+class Person < ActiveRecord::Base
+  has_many :addresses
+end
+</code>
+
+= instalando o plugin troper
+<code>
+jonatas@xonatax-mac:~/projetos/rails/my_first_app$ git clone git://github.com/jonatas/troper.git vendor/plugins/troper
+Initialized empty Git repository in /Users/jonatas/projetos/rails/my_first_app/vendor/plugins/troper/.git/
+remote: Counting objects: 433, done.
+remote: Compressing objects: 100% (353/353), done.
+remote: Total 433 (delta 210), reused 152 (delta 53)
+Receiving objects: 100% (433/433), 11.89 MiB | 19 KiB/s, done.
+Resolving deltas: 100% (210/210), done
+</code>
+
+
+= testando no console
+
+jonatas@xonatax-mac:~/projetos/rails/my_first_app$ c
+Loading development environment (Rails 2.3.2)
+>> Troper::Report.new("people").output
+=> "<table id=\"people\"><th><td>Name</td><td>Email</td><td>Phone</td></th></table>"
+>> Person.all
+=> []
+>> Person.create :name => "jonatas davi paganini", :email => "jonatasdp@gmail.com", :phone  => "4699117879", :addresses => [Address.new :street => "rua pernambuco, 1094", :city => "Francisco Beltrão", :state=> "PR"]
+=> #<Person id: 1, name: "jonatas davi paganini", email: "jonatasdp@gmail.com", phone: "4699117879", created_at: "2009-09-29 01:00:52", updated_at: "2009-09-29 01:00:52">
+>> report = Troper::Report.new("people")
+>> puts report.output 
+=> "<table id=\"people\"><th><td>Name</td><td>Email</td><td>Phone</td></th>
+      <tr><td>jonatas davi paganini</td><td>jonatasdp@gmail.com</td><td>4699117879</td></tr>
+    </table>"
+
+>> report.columns["email"].formats << "link_to_mail" # adicionando formatadores para as colunas
+=> ["link_to_mail"]
+
+>> puts report.output
+<table id="people"><th><td>Name</td><td>Email</td><td>Phone</td></th>
+   <tr><td>jonatas davi paganini</td><td><a href='mailto:jonatasdp@gmail.com'>jonatasdp@gmail.com</a></td><td>4699117879</td></tr>
+</table>
+
+
+= explicação sobre diretórios e arquivos
+
+== docs/ - pasta com arquivos da documentação no formato txt usando a marcação "textile":http://hobix.com/textile/quick.html
+== doc/ - pasta com a documentação do projeto, se estiver vazia é necessário re-gerar a documentação usando: rake rdoc
+
+=== arquitetura.txt - idéia inicial do comportamento do framework e como irá lidar com as estruturas internamente.
+=== caminho_das_pedras.txt - organização das idéias de como vai funcionar o sistema passo a passo.
+=== proposta.txt - proposta do projeto de estágio da Unipar.
+=== projeto.doc - arquivo que dirige o projeto geral de estágio.
+
+== script/
 pasta dos scripts ruby para automatizar tarefas triviais do desenvolvimento 
 
-* tasks/
+== tasks/
 tarefas rake - use rake --tasks para ver a lista de tarefas
 
-* Rakefile -- organiza as tarefas rake
+== Rakefile -- organiza as tarefas rake
 
-* acompanhamento.textile 
+== acompanhamento.textile 
 histórico de alterações no projeto, guia de acompanhamento contabilizando as horas e tarefas, juntamente com os professores.
 
-para gerar a documentação digite:
+== para gerar a documentação digite:
 <code>
 rake documenta
 </code>
 
-para gerar o relatório mensal de estágio do mês 4 digite:
+== para gerar o relatório mensal de estágio do mês 4 digite:
+
 <code>
 rake acompanhamento mes=04
 </code>
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2009 FIX
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
