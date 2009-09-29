@@ -16,7 +16,7 @@ module Troper
     def body
       %({% for #{record_name} in #{collection_name} %}
       #{apply_filters do 
-        %(<tr><td>#{columns.collect{|c|c.template_to_resource(record_name)}.join("</td><td>")}</td></tr>)
+        %(<tr><td>#{columns.collect{|c|c.template_to_resource}.join("</td><td>")}</td></tr>)
       end}
       {% endfor %}) 
     end
