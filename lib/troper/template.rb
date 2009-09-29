@@ -10,7 +10,11 @@ module Troper
     end
 
     def header
-      %(<table id="#{table_name}"><td>#{columns_title.join("</td><td>")}</td>)
+      %(<table id="#{table_name}">
+          <tr>
+             <td>#{columns_title.join("</td><td>")}</td>
+          </tr>
+          )
     end
 
     def body
