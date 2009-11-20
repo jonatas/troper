@@ -180,7 +180,6 @@ end
 ** conversa com riedi sobre não ter vindo na reuniao do estagio e combinado que será enviado por email
 
 * 28/09/2009 - [ jonatas ] - 4 horas
-
 * organizar docs
 ** normalizado e atualizado com hoe para gerar a gem
 ** adicionado exemplo e sinopse
@@ -194,7 +193,35 @@ end
 ** removido testes inuteis de configuracao no valor em pilha de contexto
 ** ajeitado documentos e dado uma geral no documento do projeto
 
-* falta 
+* 29/09/2009 - [ jonatas, riedi ] - 1 horas
+* apresentar os docs e resumo das atividades
+* decidido que:
+
+* falta para organizar
+** projeto.doc
+*** corrigir e criar as explicações sobre ruby e rails 
+*** fundamentar a fudamentação teórica 
 
 ** traduzir features html
+** imprimir a documentação rdoc
+** fazer a impressão de 3 vias da pasta imprimir
 
+* 01/10/2009 - [ jonatas ] - 4 horas
+** tentativa de construir Ext.tree sem usar servidor falhou
+
+* 11/10/2009 - [ jonatas ] - 2 horas
+** tentativa de construção da árvore sem usar servidor falhou novamente
+
+* 02/11/2009 - [ jonatas ] - 3 horas
+** construção do leiaute com sucesso
+** colocadao a árvore para usar com servidor pois não havia outra forma
+
+* 07/11/2009 - [ jonatas ] - 1 horas
+** tentativa drag and drop para arrastar elementos da árvore falhou
+
+* 17/11/2009 - [ jonatas, riedi ] - 1 horas
+** conversa sobre estado do projeto e preparativos para apresentação
+** riedi não citou nenhum ponto negativo no meu projeto, apenas pediu para confirmar a parte da formatação do documento se estava dentro das normas
+
+* 20/11/2009 - [ jonatas ] - 4 horas
+** Relatório final do estágio
