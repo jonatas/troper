@@ -1,0 +1,2 @@
+script/generate troper_route to create a new route to datasources
+script/destroy troper_route to remove routes from troper datasources

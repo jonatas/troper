@@ -1,0 +1,95 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Troper - Report Builder</title>
+  <link rel="stylesheet" type="text/css" href="./extjs/resources/css/ext-all.css">
+  <script type="text/javascript" src="./extjs/adapter/ext/ext-base.js"></script>
+  <script type="text/javascript" src="./extjs/ext-all.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/troper.css">
+ </head>
+ <body>
+  <div id="models-tree" style="padding:20px"></div>
+  <script type="text/javascript" > 
+     function criaArvoreDosDatasources(){
+     Ext.QuickTips.init();
+      var treeLoader = new Ext.tree.TreeLoader({ url:'/datasources', baseParams: {format: 'json'}, requestMethod: 'GET'}); 
+        var rootNode = new Ext.tree.AsyncTreeNode({ text: 'Fonte de dados', id: '0' });
+        var tree = new Ext.tree.TreePanel({
+         animate:true,
+         enableDD:true,
+         ddGroup: 'datasourcesDD',
+         // layout
+         region:'west',
+         split:true,
+         // panel
+         autoScroll:true,
+           loader: treeLoader,
+           renderTo:'models-tree',
+           root: rootNode,
+           rootVisible: true });
+
+        var viewport = new Ext.Viewport({ 
+            layout: 'border', 
+            renderTo: Ext.getBody(), 
+            items: [{ 
+                      region: 'west', 
+                      xtype: 'panel', 
+                      split: true, 
+                      width: '20%', 
+                      items:[{
+                        contentEl:'models-tree',
+                        title: 'Fonte de dados',
+                        closable:false
+                        }]
+                      },{ 
+                       region: 'center', 
+                       xtype: 'panel', 
+                       items: [             
+                         {
+                          xtype:'button',
+                          fieldLabel: 'Executar',
+                          handler: function(){
+                            
+                          }
+                         },{
+                          xtype:'htmleditor',
+                          id:'htmleditor',
+                          enableDD: true,
+                          fieldLabel:'Template',
+                          height:500,
+                          width:'80%',
+                          anchor:'98%'}
+                        ]
+                       },{ 
+                       region: 'east', 
+                       xtype: 'panel', 
+                       split: true, 
+                       width: '20%', 
+                       id: 'troper-info',
+                       html: 'Informações sobre o elemento' 
+                       },{ 
+                       region: 'south', 
+                       xtype: 'panel', 
+                       id: 'troper-console',
+                       html: 'Console de erros' 
+                       }] 
+        }); 
+
+//    var dragZone = new ImageDragZone(view, {containerScroll:true,
+ //      ddGroup: 'organizerDD'});
+
+ //tree.renderTo('models-tree');
+ //tree.root.expand();
+
+return viewport;
+  };
+   Ext.onReady(criaArvoreDosDatasources());
+
+</script>
+
+
+ </body>
+</html>
+
+
+

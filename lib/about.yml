@@ -1,0 +1,8 @@
+author: Jônatas Davi Paganini
+summary: Adds a report builder based on ActiveRecord reflections.
+description: "This Framework will create add a interface to build reports. Using liquid templates, Troper dive into models and create datasources for use with liquid templates. With a simple interface would be possible to create a new report easy."
+homepage: http://github.com/jonatas/troper
+plugin: git://github.com/jonatas/troper.git
+license: MIT
+version: 0.0.1
+rails_version: 2.2+
