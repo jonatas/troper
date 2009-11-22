@@ -1,12 +1,14 @@
 module Troper
   class DataSource
     attr_accessor :model, :name, :description, :joins
+    attr_reader :liquid_attributes
 
     extend Forwardable
     def_delegators :@model, :table_name, :find, :columns
 
-    def initialize(model)
+    def initialize(model, liquid_attributes)
       @model = model
+      @liquid_attributes = liquid_attributes
     end
 
     def join(what)
