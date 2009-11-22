@@ -5,7 +5,7 @@ module Troper
     def rails_default_datasources
       self.models.collect do |model|
         # liquidifying attributes 
-        if not model.instance_method_already_implemented? "to_liquid"
+        if model.kind_of?ActiveRecord::Base and not model.instance_method_already_implemented? "to_liquid"
           attrs = (model.columns.collect{|c|c.name.to_sym} + model.reflections.keys) 
            
           model.class_eval { 
