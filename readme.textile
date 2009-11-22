@@ -127,9 +127,16 @@ class Person < ActiveRecord::Base
 end
 </code>
 
-= instalando o plugin troper
-<code>
 
+= migrando o banco de dados
+
+<code>rake db:migrate</code>
+
+= instalando o plugin troper
+
+Agora o sistema de exemplo já está pronto. A instalação do plugin é feita através do seguinte comando:
+
+<code>
 jonatas@xonatax-mac:~/projetos/rails/my_first_app$ git clone git://github.com/jonatas/troper.git vendor/plugins/troper
 Initialized empty Git repository in /Users/jonatas/projetos/rails/my_first_app/vendor/plugins/troper/.git/
 remote: Counting objects: 433, done.
@@ -137,12 +144,24 @@ remote: Compressing objects: 100% (353/353), done.
 remote: Total 433 (delta 210), reused 152 (delta 53)
 Receiving objects: 100% (433/433), 11.89 MiB | 19 KiB/s, done.
 Resolving deltas: 100% (210/210), done
-
 </code>
 
-= migrando o banco de dados
+= gerando as rotas e o html
 
-<code>rake db:migrate</code>
+Quando o troper estiver instalado, então deve-se gerar as rotas e o html para que permitiram parasitar no sistema atual. Para isso, foram criados os geradores automáticos.
+<code>
+script/generate troper_route
+script/generate troper_html
+</code>
+
+Na primeira linha será escrito a rota que permite acesso a url /datasources que é usado para se comunicar com as funcionalidades da interface do Troper.
+O segundo gerador copia o arquivo troper.html e a pasta extjs para a pasta pública.
+
+# Fixme - os scripts não funcionam no Windows.
+
+= testando a interface
+ 
+Iniciando o servidor no modo desenvolvimento padrão, é possível acessar o link http://localhost:3000/troper.html e iniciar a construção de relatórios. Se acontecer alguma coisa errada, lembre-se de que os comandos <code>script/generate troper_route</code> e <code>script/generate troper_html</code> são necessários para o plugin funcionar.
 
 = testando no console
 
@@ -178,6 +197,7 @@ Loading development environment (Rails 2.3.2)
 === caminho_das_pedras.txt - organização das idéias de como vai funcionar o sistema passo a passo.
 === proposta.txt - proposta do projeto de estágio da Unipar.
 === projeto.doc - arquivo que dirige o projeto geral de estágio.
+=== relatorio_final_estagio.tex - arquivo sobre as conclusões sobre a experiência de fazer o projeto.
 
 == script/
 
