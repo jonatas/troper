@@ -162,10 +162,19 @@ O segundo gerador copia o arquivo troper.html para a pasta pública.
 = A interface do plugin usa o framework ExtJs, e espera que o mesmo esteja na pasta pública. ExtJs será adicionado a bíblioteca como submodulo conforme o código a seguir:
 
 <code>
-git submodule add git://github.com/probonogeek/extjs.git public/extjs
+git submodule add git://github.com/probonogeek/extjs.git public/extjs 
+
 git submodule init
+
 git submodule update
 </code>
+
+ou se o projeto não estiver usando git apenas faça um clone
+
+<code>
+git clone git://github.com/probonogeek/extjs.git public/extjs 
+</code>
+
 
 = testando a interface
  
