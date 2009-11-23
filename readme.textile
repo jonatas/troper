@@ -149,15 +149,23 @@ Resolving deltas: 100% (210/210), done
 = gerando as rotas e o html
 
 Quando o troper estiver instalado, então deve-se gerar as rotas e o html para que permitiram parasitar no sistema atual. Para isso, foram criados os geradores automáticos.
+
 <code>
 script/generate troper_route
 script/generate troper_html
 </code>
 
-Na primeira linha será escrito a rota que permite acesso a url /datasources que é usado para se comunicar com as funcionalidades da interface do Troper.
-O segundo gerador copia o arquivo troper.html e a pasta extjs para a pasta pública.
 
-# Fixme - os scripts não funcionam no Windows.
+Na primeira linha será escrito a rota que permite acesso a url /datasources que é usado para se comunicar com as funcionalidades da interface do Troper.
+O segundo gerador copia o arquivo troper.html para a pasta pública.
+
+= A interface do plugin usa o framework ExtJs, e espera que o mesmo esteja na pasta pública. ExtJs será adicionado a bíblioteca como submodulo conforme o código a seguir:
+
+<code>
+git submodule add git://github.com/probonogeek/extjs.git public/extjs
+git submodule init
+git submodule update
+</code>
 
 = testando a interface
  
