@@ -4,8 +4,7 @@ module Troper
 
     def rails_default_datasources
       self.models.collect do |model|
-        # liquidifying attributes 
-        if model.kind_of?ActiveRecord::Base and not model.instance_method_already_implemented? "to_liquid"
+        if model.kind_of?ActiveRecord::Base and model.respond_to? "to_liquid" # not model.instance_method_already_implemented? "to_liquid"
           attrs = (model.columns.collect{|c|c.name.to_sym} + model.reflections.keys) 
            
           model.class_eval { 
@@ -26,8 +25,11 @@ module Troper
     def models
       Dir[File.join(dir_models, "*.rb")].collect do |file|
         model = file.gsub(/.rb$/,'').split("/").last.camelize
-        model.camelize.constantize
-      end
+        model = model.camelize.constantize
+        if model < ActiveRecord::Base # && model.table_exists?))# rescue nil)
+         model 
+        end
+      end.compact
     end
   end
 end
