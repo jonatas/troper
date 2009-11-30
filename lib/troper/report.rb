@@ -1,19 +1,18 @@
 module Troper
-
-
   class Report
     extend Forwardable
     def_delegators :@datasource, :table_name, :find, :model, :join
     def_delegators :@template, :template_to_resource, :header, :body, :footer
 
-    attr_accessor :datasource, :columns, :data, :filters, :template
+    attr_accessor :datasource, :columns, :data, :filters, :template, :parent_report
     
 
-    def initialize(table_name)
+    def initialize(table_name, parent_report = nil)
+      self.parent_report = parent_report
       self.datasource = Troper.datasources.find{|datasource|datasource.model.table_name == table_name}
-
       self.columns = []
       self.columns.extend Troper::Columns
+      self.columns.report = self 
       self.filters = []
 
       self.model.columns.each do |column|
@@ -43,7 +42,11 @@ module Troper
     #    Troper::Report.new("people").collection_name 
     #    => "people"
     def collection_name
-      table_name
+      if not parent_report
+        table_name
+      else
+        [parent_report.record_name, table_name].join(".")
+      end
     end
 
     # the same of model name
@@ -51,7 +54,7 @@ module Troper
     #   Troper::Report.new("people").record_name    
     #   => "person"
     def record_name
-      model.to_s.downcase
+       model.to_s.downcase
     end
     # generates the output render the template with the context
     #
@@ -62,22 +65,7 @@ module Troper
     #       <tr><td>Peter Pan</td><td>peter@pan.net</td><td>46 8822 8800</td></tr>
     #    </table>
     def output 
-      template.render hasheize_data
-    end
-
-    # Converts data to hashes to use with liquid templates
-    #
-    # Example:
-    #   Troper::Report.new("people").hasheize_data 
-    #   => {"people"=>[#<Person id: 1, name: "Jônatas...
-    def hasheize_data
-     hashes = 
-       if self.data and self.data.respond_to? "hashes"
-         self.data.hashes
-       else
-         self.data = model.find(:all) #.collect{|e|e.attributes}
-       end
-       {table_name => hashes}
+      template.render self.table_name => model.all
     end
   end
 end

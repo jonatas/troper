@@ -1,6 +1,7 @@
 module Troper
   # this module should represent the columns collection 
   module Columns
+    attr_writer :report
     def find_by_names(*names)
       self.find_all { |column| names.include? column.name }
     end
@@ -11,10 +12,9 @@ module Troper
 
     alias_method :[], :find_by_name
 
-
     def add(column)
       if column.kind_of?String
-        column = Column.new column
+        column = Column.new column, @report.record_name
       end
       self.push column if not find_by_name(column.name)
     end

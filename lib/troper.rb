@@ -1,6 +1,5 @@
 module Troper
   class << self
-
     # dir rails root should be where the project 
     attr_accessor :dir_rails_root
     attr_accessor :datasources
@@ -9,9 +8,6 @@ module Troper
       File.dirname(__FILE__)
     end
 
-    def lib
-      File.join(self.root, "troper")
-    end
     # helper to liquidify a template with attributes
     # Example: 
     #   Troper.liquidify("hello {{ name }}!!!", {'name' => "world"})
@@ -22,6 +18,7 @@ module Troper
   end
 end
 
+require 'rubygems'
 require 'forwardable'
 require 'RedCloth'
 require 'liquid'
@@ -37,10 +34,11 @@ require File.join(File.dirname(__FILE__), 'troper', "routing")
 require File.join(File.dirname(__FILE__), 'troper', "commands")
 
 path = File.join(File.dirname(__FILE__), 'app', 'controllers')  
+
 $LOAD_PATH << path 
+
 ActiveSupport::Dependencies.load_paths << path 
 ActiveSupport::Dependencies.load_once_paths.delete(path) 
-
 
 require File.join(File.dirname(__FILE__), 'config', 'routes')
 

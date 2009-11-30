@@ -17,6 +17,7 @@ module Troper
     def label
       @label || name.humanize
     end
+    
     def template_to_resource
       "{{ " + resources.join(" | ") + " }}"
     end

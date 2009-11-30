@@ -4,7 +4,7 @@ module Troper
     attr_accessor :report
     def_delegators :@report, :table_name,  :columns_title, 
                              :record_name, :collection_name,
-                             :filters,     :columns
+                             :filters,     :columns, :model
     def initialize(report)
       self.report = report
     end
@@ -20,7 +20,14 @@ module Troper
     def body
       %({% for #{record_name} in #{collection_name} %}
       #{apply_filters do 
-        %(<tr><td>#{columns.collect{|c|c.template_to_resource}.join("</td><td>")}</td></tr>)
+        %(<tr><td>#{columns.collect do |column|
+          if association = model.reflections[column.name.to_sym] and
+             association.macro.to_s =~ /has_many|has_and_belongs_to_many/
+               Troper::Report.new(column.name, self.report).template_to_resource
+          else
+            column.template_to_resource
+          end
+        end.join("</td><td>")}</td></tr>)
       end}
       {% endfor %}) 
     end

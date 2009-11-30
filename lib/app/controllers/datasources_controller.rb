@@ -16,6 +16,7 @@ class DatasourcesController < ApplicationController
           end
           datasource = Troper.datasources.find{|e|e.model.to_s.downcase == node.downcase }
           datasource ||= Troper.datasources.find{|e|e.model.to_s.downcase == node.singularize.downcase}
+
           attrs = datasource.liquid_attributes
           render :json => attrs.collect{|c|{"text"=>c, "leaf" => false, "id" => "#{datasource.model.to_s.downcase}.#{c}", "parent_id" => datasource.model.to_s}}.to_json 
         end
