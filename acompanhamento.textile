@@ -223,5 +223,12 @@ end
 ** conversa sobre estado do projeto e preparativos para apresentação
 ** riedi não citou nenhum ponto negativo no meu projeto, apenas pediu para confirmar a parte da formatação do documento se estava dentro das normas
 
-* 20/11/2009 - [ jonatas ] - 4 horas
+* 20/11/2009 - [ jonatas ] - 8 horas
 ** Relatório final do estágio
+
+* 29/11/2009 - [ jonatas ] - 8 horas
+** Apresentação do estágio pdf usando Latex BEAMER
+** Refactor da forma de gerar as templates para o recurso
+*** Atribuição de parent_report para fazer sub-relatórios
+*** Montagem automática de subrelatórios para coleções has_many e has_and_belongs_to_many
+
