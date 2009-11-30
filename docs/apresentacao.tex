@@ -71,6 +71,9 @@ report = Troper::Report.new("people")
 report.columns.add "addresses"
 puts report.template_to_resource
 \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
 \begin{lstlisting}[language=html, caption=Resultado do puts anterior]
 <table id="people">
   <tr>
@@ -124,6 +127,22 @@ Na template será adicionada um \textbf{if}:
     {% if person.addresses != empty %}
        <tr><td>{{ person.name }}</td> #...
 \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[language=ruby, caption=Adicionando formatadores]
+col = report.columns[:description]
+col.formats << "truncate: 50"
+\end{lstlisting}
+
+Na template será adicionada um \textbf{método}:
+
+\begin{lstlisting}[language=html, caption=Exibindo na template]
+# ...
+  <td>{{ record.description | truncate: 50 }}</td>
+#...
+\end{lstlisting}
+
 \end{frame}
 
 \begin{frame} 
