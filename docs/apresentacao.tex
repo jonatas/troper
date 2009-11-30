@@ -1,0 +1,179 @@
+\documentclass{beamer} 
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf-8]{inputenc}
+\usepackage{listings}
+\lstset{language=ruby,caption=Exemplo,label=Ruby, numbers=left, frame=single} 
+
+\begin{document} 
+\begin{frame} 
+\frametitle{Troper} 
+\begin{itemize} 
+\item O sistema
+\item O plugin
+\item As ferramentas 
+\item As métodologias
+\item Diga NÃO!
+\item Diga SIM!
+\end{itemize} 
+\end{frame} 
+
+\begin{frame} 
+\frametitle{Troper - O Sistema Hospedeiro} 
+\begin{itemize} 
+  \item Baseado nos modelos já existentes no sistema
+  \item Usa as regras do negócio já existentes
+\end{itemize} 
+\end{frame} 
+
+\begin{frame}[fragile]
+\frametitle{Troper - O Sistema Hospedeiro} 
+\begin{lstlisting}[caption=Modelo ActiveRecord]
+# app/models/person.rb
+class Person < ActiveRecord::Base
+  has_many :addresses
+end
+# app/models/address.rb
+class Address < ActiveRecord::Base
+  belongs_to :person 
+end
+\end{lstlisting}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Troper - A template Liquid padrão } 
+\begin{itemize} 
+  \item Usa as regras de negócio dos modelos
+  \item O plugin entende estas regras através das \textit{reflections} do modelo
+  \item Extensibilidade das tags para liquid
+  \item Criação de formatadores e outros de forma simples 
+\end{itemize} 
+\end{frame} 
+
+\begin{frame}[fragile]
+\frametitle{Troper - Um exemplo Liquid} 
+\begin{lstlisting}[language=html, caption=Template do Liquid]
+<table>
+  {% for person in people %}
+    <tr>
+      <td>{{ person.name }}</td>
+      <td>{{ person.email | link_to_mail }}</td>
+      <td>{{ person.phone | format_phone }}</td>
+     </tr>
+   {% endfor %}      
+</table>
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[language=ruby, caption=Usando o Troper]
+report = Troper::Report.new("people")
+report.columns.add "addresses"
+puts report.template_to_resource
+\end{lstlisting}
+\begin{lstlisting}[language=html, caption=Resultado do puts anterior]
+<table id="people">
+  <tr>
+     <td>Name</td><td>Email</td><td>Phone</td><td>Addresses</td>
+  </tr>
+  {% for person in people %}
+  <tr><td>{{ person.name }}</td>
+      <td>{{ person.email }}</td>
+      <td>{{ person.phone }}</td>
+      <td>
+      <table id="addresses">
+      <tr><td>Description</td><td>City</td><td>State</td></tr>
+      {% for address in person.addresses %}
+        <tr><td>{{ address.description }}</td>
+            <td>{{ address.city }}</td>
+            <td>{{ address.state }}</td></tr>
+      {% endfor %}
+      </table></td>
+  </tr>
+  {% endfor %}
+</table>
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[language=html, caption=Executando o relatório]
+>> puts report.output
+<table id="people">
+  <tr><td>Name</td><td>Email</td><td>Phone</td><td>Addresses</td></tr>
+  <tr><td>Jonatas Davi Paganini</td>
+  <td>jonatasdp@gmail.com</td>
+  <td>46 9911 7879</td><td>
+  <table id="addresses">
+  <tr><td>Description</td>
+      <td>City</td><td>State</td></tr>
+  <tr><td>rua pernambuco, 123, fco beltrao - pr</td><td></td><td></td></tr>
+  <tr><td>avenida julio assis, fco beltrao - pr</td><td></td><td></td></tr>
+</table>...
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[language=ruby, caption=Adicionando filtros]
+report.filters << "person.addresses != empty"
+\end{lstlisting}
+
+Na template será adicionada um \textbf{if}:
+
+\begin{lstlisting}[language=html, caption=Exibindo na template]
+  {% for person in people %}
+    {% if person.addresses != empty %}
+       <tr><td>{{ person.name }}</td> #...
+\end{lstlisting}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Troper - Ferramentas}
+  \begin{itemize} 
+    \item Rails
+    \item ExtJS 
+    \item Liquid Templates 
+    \item Terminal Unix 
+    \item GIT 
+    \item VIM 
+    \item GitHub 
+    \item LaTeX
+  \end{itemize} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Troper - As métodologias}
+  \begin{itemize} 
+    \item Behaviour Development Driven - Cucumber
+    \item DRY - Don't repeat yourself 
+    \item Convention Over Configuration
+    \item Prototipação 
+  \end{itemize} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Troper - Padrões de Projeto}
+  \begin{itemize} 
+    \item Forwardable
+    \item Command Pattern 
+  \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+\frametitle{Troper - Não fez uso das tecnologias }
+  \begin{itemize} 
+    \item Windows 
+    \item IDE
+    \item Banco de dados para armazenamento de objetos
+  \end{itemize} 
+\end{frame} 
+
+\begin{frame} 
+\frametitle{Troper - Apoia!}
+  \begin{itemize} 
+    \item Ruby 
+    \item Open Source 
+    \item Linux 
+    \item GIT 
+  \end{itemize} 
+\end{frame} 
+\end{document} 
