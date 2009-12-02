@@ -8,6 +8,7 @@ module Troper
           attrs = (model.columns.collect{|c|c.name.to_sym} + model.reflections.keys) 
 
           model.class_eval { 
+            unloadable
             liquid_methods *attrs
             define_method :liquid_attributes do
               attrs
