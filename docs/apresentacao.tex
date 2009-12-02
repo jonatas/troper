@@ -4,6 +4,7 @@
 \usepackage[utf-8]{inputenc}
 \usepackage{listings}
 \lstset{language=ruby,caption=Exemplo,label=Ruby, numbers=left, frame=single} 
+%\usecolortheme{seahorse}
 
 \begin{document} 
 \begin{frame} 
@@ -13,8 +14,7 @@
 \item O plugin
 \item As ferramentas 
 \item As métodologias
-\item Diga NÃO!
-\item Diga SIM!
+\item Considerações Finais
 \end{itemize} 
 \end{frame} 
 
@@ -66,6 +66,7 @@ end
 \end{frame}
 
 \begin{frame}[fragile]
+\frametitle{Troper - Um exemplo do Troper} 
 \begin{lstlisting}[language=ruby, caption=Usando o Troper]
 report = Troper::Report.new("people")
 report.columns.add "addresses"
@@ -74,6 +75,7 @@ puts report.template_to_resource
 \end{frame}
 
 \begin{frame}[fragile]
+\frametitle{Troper - Consultando a template} 
 \begin{lstlisting}[language=html, caption=Resultado do puts anterior]
 <table id="people">
   <tr>
@@ -99,7 +101,8 @@ puts report.template_to_resource
 \end{frame}
 
 \begin{frame}[fragile]
-\begin{lstlisting}[language=html, caption=Executando o relatório]
+\frametitle{Troper - Consultando a saída do relatório} 
+\begin{lstlisting}[language=html, caption=report.output]
 >> puts report.output
 <table id="people">
   <tr><td>Name</td><td>Email</td><td>Phone</td><td>Addresses</td></tr>
@@ -116,6 +119,7 @@ puts report.template_to_resource
 \end{frame}
 
 \begin{frame}[fragile]
+\frametitle{Troper - Cadê os filtros?} 
 \begin{lstlisting}[language=ruby, caption=Adicionando filtros]
 report.filters << "person.addresses != empty"
 \end{lstlisting}
@@ -135,7 +139,7 @@ col = report.columns[:description]
 col.formats << "truncate: 50"
 \end{lstlisting}
 
-Na template será adicionada um \textbf{método}:
+Adicionando um \textbf{método} na template:
 
 \begin{lstlisting}[language=html, caption=Exibindo na template]
 # ...
@@ -169,6 +173,22 @@ Na template será adicionada um \textbf{método}:
     \item Convention Over Configuration
     \item Prototipação 
   \end{itemize} 
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Troper - Estórias do usuário}
+\begin{verbatim}
+Funcionalidade: Gerar relatorio a partir de uma tabela.
+  Cenario: Criar um relatorio usando uma tabela como fonte de dados
+     Dado que posso ver a tabela pessoas como relatorio
+     Quando olhar para as colunas desse relatorio
+     Então deve ser igual: nome, email, telefone
+
+     Quando eu olhar para a coluna 'nome'
+       Então o titulo deve ser igual a 'Nome'
+       E o recurso deve ser igual a 'pessoa.nome'
+       E a template para o recurso deve ser \
+           igual a '{{ pessoa.nome }}'
+\end{verbatim}
 \end{frame}
 
 \begin{frame}
