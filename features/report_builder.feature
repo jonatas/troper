@@ -42,8 +42,16 @@ Feature: Manage reports using simple steps to build.
    Then will get a string builded on template
    
    When I put a new filter to get only people with phone
-   Then I will see it on the template to resource
+   Then I will see "if person.phone" on the template to resource
 
    Given that I will join many address for each person
-   Then I will see it on the template to resource
+   Then I will see "{% for address in person.addresses %}" on the template to resource
+  
+   Given that I put a manual template to resource like 
+    """
+{% for person in people %} {{person.name | truncate: 10 }} \\n {% endfor %}
+    """
+
+   Then I will see ""{% for person in people %} {{person.name | truncate: 10 }} \n {% endfor %}" on the template to resource 
+
       

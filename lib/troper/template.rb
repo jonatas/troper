@@ -45,9 +45,7 @@ module Troper
     end
 
     def template_to_resource
-      header +
-      body +
-      footer
+      report.manual_template_to_resource || ( header + body + footer )
     end
 
     def render(context)

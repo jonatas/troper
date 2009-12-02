@@ -54,8 +54,18 @@ end
 Given /^that I will join many address for each person$/ do
   @report.columns.add "addresses"
 end
-
-Then /^I will see it on the template to resource$/ do
-  @report.template_to_resource.should include("{% for address in person.addresses %}")
+ 
+Then /^I will see "([^\"]*)" on the template to resource$/ do |arg1|
+  @report.template_to_resource.should include(arg1)
 end
+
+Given /^that I put a manual template to resource like$/ do |string|
+  @report.manual_template_to_resource = string
+end
+
+Then /^I will see "([^\"]*)"\{% for person in people %\} \{\{person\.name \| truncate: 10 \}\} \\n \{% endfor %\}" on the template to resource$/ do |arg1|
+  @report.template_to_resource.should include(arg1)
+end
+
+
 

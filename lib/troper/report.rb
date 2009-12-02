@@ -4,7 +4,7 @@ module Troper
     def_delegators :@datasource, :table_name, :find, :model, :join
     def_delegators :@template, :template_to_resource, :header, :body, :footer
 
-    attr_accessor :datasource, :columns, :data, :filters, :template, :parent_report
+    attr_accessor :manual_template_to_resource, :datasource, :columns, :data, :filters, :template, :parent_report
     
 
     def initialize(table_name, parent_report = nil)
